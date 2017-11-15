@@ -1,0 +1,10 @@
+c:\users\anci_oq88\documents\visual studio 2013\Projects\WordPad\WordPad\bin\Debug\WordPad.exe.config
+c:\users\anci_oq88\documents\visual studio 2013\Projects\WordPad\WordPad\bin\Debug\WordPad.exe
+c:\users\anci_oq88\documents\visual studio 2013\Projects\WordPad\WordPad\bin\Debug\WordPad.pdb
+c:\users\anci_oq88\documents\visual studio 2013\Projects\WordPad\WordPad\obj\Debug\WordPad.csprojResolveAssemblyReference.cache
+c:\users\anci_oq88\documents\visual studio 2013\Projects\WordPad\WordPad\obj\Debug\WordPad.Form1.resources
+c:\users\anci_oq88\documents\visual studio 2013\Projects\WordPad\WordPad\obj\Debug\WordPad.Properties.Resources.resources
+c:\users\anci_oq88\documents\visual studio 2013\Projects\WordPad\WordPad\obj\Debug\WordPad.csproj.GenerateResource.Cache
+c:\users\anci_oq88\documents\visual studio 2013\Projects\WordPad\WordPad\obj\Debug\WordPad.exe
+c:\users\anci_oq88\documents\visual studio 2013\Projects\WordPad\WordPad\obj\Debug\WordPad.pdb
+C:\Users\anci_oq88\documents\visual studio 2013\Projects\WordPad\WordPad\bin\Debug\System.Windows.Forms.Ribbon35.dll
