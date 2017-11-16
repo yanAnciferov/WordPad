@@ -12,12 +12,14 @@ namespace WordPad
 {
     public partial class Form1 : Form
     {
+       
         FindWindow finder = null;
         FindEndReplace findeReplacer = null;
         public Form1()
         {
             InitializeComponent();
             CheckStateMainTextBox();
+            MainTextBox_SelectionChanged(null, null);
             MainTextBox.Text = "Отображаемые диалоговые окна и команды меню могут отличаться от описанных в справке в зависимости от текущих настроек или редации Visual Studio. Чтобы изменить параметры, в меню Сервис выберите команду Импорт и экспорт параметров. Дополнительные сведения см. в разделе Customizing Development Settings in Visual Studio.";
         }
 
@@ -121,6 +123,42 @@ namespace WordPad
         {
             while (ReplaceEventHandler(obj, args)) { }
             return false;
+        }
+
+        private void Paste_Click(object sender, EventArgs e)
+        {
+            if (Clipboard.ContainsText())
+                MainTextBox.SelectedText = Clipboard.GetText();
+
+
+        }
+
+        private void Copy_Click(object sender, EventArgs e)
+        {
+            if (MainTextBox.SelectionLength > 0)
+            {
+                Clipboard.SetText(MainTextBox.SelectedText);
+            }
+        }
+
+        private void Cut_Click(object sender, EventArgs e)
+        {
+            Copy_Click(sender, e);
+            MainTextBox.SelectedText = "";
+        }
+
+        private void MainTextBox_SelectionChanged(object sender, EventArgs e)
+        {
+            if(MainTextBox.SelectedText.Length == 0)
+            {
+                Copy.Enabled = false;
+                Cut.Enabled = false;
+            }
+            else
+            {
+                Copy.Enabled = true;
+                Cut.Enabled = true;
+            }
         }
     }
 }

@@ -43,6 +43,10 @@
             this.PrintButton = new System.Windows.Forms.RibbonOrbMenuItem();
             this.MainTab = new System.Windows.Forms.RibbonTab();
             this.Buffer = new System.Windows.Forms.RibbonPanel();
+            this.Paste = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton7 = new System.Windows.Forms.RibbonButton();
+            this.Cut = new System.Windows.Forms.RibbonButton();
+            this.Copy = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
             this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
             this.ribbonPanel3 = new System.Windows.Forms.RibbonPanel();
@@ -169,7 +173,40 @@
             // 
             // Buffer
             // 
+            this.Buffer.Items.Add(this.Paste);
+            this.Buffer.Items.Add(this.Cut);
+            this.Buffer.Items.Add(this.Copy);
             this.Buffer.Text = "Буфер обмена";
+            // 
+            // Paste
+            // 
+            this.Paste.DropDownItems.Add(this.ribbonButton7);
+            this.Paste.Image = ((System.Drawing.Image)(resources.GetObject("Paste.Image")));
+            this.Paste.SmallImage = ((System.Drawing.Image)(resources.GetObject("Paste.SmallImage")));
+            this.Paste.Text = "Вставить";
+            this.Paste.Click += new System.EventHandler(this.Paste_Click);
+            // 
+            // ribbonButton7
+            // 
+            this.ribbonButton7.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton7.Image")));
+            this.ribbonButton7.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton7.SmallImage")));
+            this.ribbonButton7.Text = "ribbonButton7";
+            // 
+            // Cut
+            // 
+            this.Cut.Image = ((System.Drawing.Image)(resources.GetObject("Cut.Image")));
+            this.Cut.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.Cut.SmallImage = ((System.Drawing.Image)(resources.GetObject("Cut.SmallImage")));
+            this.Cut.Text = "Вырезать";
+            this.Cut.Click += new System.EventHandler(this.Cut_Click);
+            // 
+            // Copy
+            // 
+            this.Copy.Image = ((System.Drawing.Image)(resources.GetObject("Copy.Image")));
+            this.Copy.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.Copy.SmallImage = ((System.Drawing.Image)(resources.GetObject("Copy.SmallImage")));
+            this.Copy.Text = "Копировать";
+            this.Copy.Click += new System.EventHandler(this.Copy_Click);
             // 
             // ribbonPanel1
             // 
@@ -248,12 +285,14 @@
             // MainTextBox
             // 
             this.MainTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.MainTextBox.HideSelection = false;
             this.MainTextBox.Location = new System.Drawing.Point(193, 57);
-            this.MainTextBox.MinimumSize = new System.Drawing.Size(100, 0);
+            this.MainTextBox.MinimumSize = new System.Drawing.Size(100, 4);
             this.MainTextBox.Name = "MainTextBox";
             this.MainTextBox.Size = new System.Drawing.Size(465, 386);
             this.MainTextBox.TabIndex = 0;
             this.MainTextBox.Text = "";
+            this.MainTextBox.SelectionChanged += new System.EventHandler(this.MainTextBox_SelectionChanged);
             this.MainTextBox.TextChanged += new System.EventHandler(this.MainTextBox_TextChanged);
             // 
             // Form1
@@ -297,6 +336,10 @@
         private System.Windows.Forms.RibbonButton ribbonButton6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.RichTextBox MainTextBox;
+        private System.Windows.Forms.RibbonButton Paste;
+        private System.Windows.Forms.RibbonButton ribbonButton7;
+        private System.Windows.Forms.RibbonButton Cut;
+        private System.Windows.Forms.RibbonButton Copy;
     }
 }
 
