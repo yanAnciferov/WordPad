@@ -6,9 +6,11 @@ using System.Windows.Forms;
 
 namespace WordPad
 {
-    static class Program
-    {
-        /// <summary>
+    static class Prog { 
+    
+   
+
+       /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
@@ -20,3 +22,5 @@ namespace WordPad
         }
     }
 }
+    
+            
