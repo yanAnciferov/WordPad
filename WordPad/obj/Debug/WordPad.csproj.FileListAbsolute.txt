@@ -12,7 +12,6 @@ C:\Users\Yan\Desktop\Новая папка\WordPad\WordPad\bin\Debug\WordPad.exe
 C:\Users\Yan\Desktop\Новая папка\WordPad\WordPad\bin\Debug\WordPad.exe
 C:\Users\Yan\Desktop\Новая папка\WordPad\WordPad\bin\Debug\WordPad.pdb
 C:\Users\Yan\Desktop\Новая папка\WordPad\WordPad\bin\Debug\System.Windows.Forms.Ribbon35.dll
-C:\Users\Yan\Desktop\Новая папка\WordPad\WordPad\obj\Debug\WordPad.csprojResolveAssemblyReference.cache
 C:\Users\Yan\Desktop\Новая папка\WordPad\WordPad\obj\Debug\WordPad.Form1.resources
 C:\Users\Yan\Desktop\Новая папка\WordPad\WordPad\obj\Debug\WordPad.Properties.Resources.resources
 C:\Users\Yan\Desktop\Новая папка\WordPad\WordPad\obj\Debug\WordPad.csproj.GenerateResource.Cache
@@ -27,3 +26,4 @@ C:\Users\Yan\Desktop\Новая папка\WordPad\WordPad\obj\Debug\WordPad.For
 C:\Users\Yan\Desktop\Новая папка\WordPad\WordPad\obj\Debug\WordPad.Form1.ru.resources
 C:\Users\Yan\Desktop\Новая папка\WordPad\WordPad\obj\Debug\mzn-IR\WordPad.resources.dll
 C:\Users\Yan\Desktop\Новая папка\WordPad\WordPad\obj\Debug\ru\WordPad.resources.dll
+C:\Users\Yan\Desktop\Новая папка\WordPad\WordPad\obj\Debug\WordPad.csprojResolveAssemblyReference.cache

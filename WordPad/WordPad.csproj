@@ -117,6 +117,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\if_save_44367.png" />
+    <None Include="Resources\if_save_edit_44375.png" />
     <Content Include="WordPad.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

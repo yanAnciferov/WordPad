@@ -50,6 +50,16 @@ namespace WordPad
 
             KeyPreview = true;
             KeyDown += Form1_KeyDown;
+
+            System.Drawing.Text.InstalledFontCollection fonts = new System.Drawing.Text.InstalledFontCollection();
+            foreach (FontFamily font in fonts.Families)
+            {
+                
+                RibbonButton ribbonItem = new RibbonButton();
+                ribbonItem.Text = font.Name;
+                ribbonItem.Click += FontItem_Click;
+                FontComboBox.DropDownItems.Add(ribbonItem);
+            }
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -187,6 +197,23 @@ namespace WordPad
             
         }
 
+        private void FontItem_Click(object sender, EventArgs e)
+        {
+            var btn = sender as RibbonButton;
+            using (RichTextBox tmpRB = new RichTextBox())
+            {
+                tmpRB.SelectAll();
+                tmpRB.SelectedRtf = FontCombo.SelectedRtf;
+                for (int i = 0; i < tmpRB.TextLength; ++i)
+                {
+                    tmpRB.Select(i, 1);
+                    tmpRB.SelectionFont = new Font(btn.Text, tmpRB.SelectionFont.Size, tmpRB.SelectionFont.Style);
+                }
+                tmpRB.SelectAll();
+                FontCombo.SelectedRtf = tmpRB.SelectedRtf;
+            }
+        }
+
         private void MainTextBox_SelectionChanged(object sender, EventArgs e)
         {
             if (FontCombo.SelectedText.Length == 0)
@@ -200,22 +227,35 @@ namespace WordPad
                 Cut.Enabled = true;
             }
 
-            if (FontCombo.SelectionFont.Size.ToString() == FontSizeCombo.TextBoxText
-                || FontSizeCombo.TextBoxText == ""
-                || FontCombo.SelectionLength == 0
-                )
-                FontSizeCombo.TextBoxText = FontCombo.SelectionFont.Size.ToString();
+
+            if (FontCombo.SelectionFont != null)
+            {
+                if (FontCombo.SelectionFont.Size.ToString() == FontSizeCombo.TextBoxText
+                    || FontSizeCombo.TextBoxText == ""
+                    || FontCombo.SelectionLength == 0
+                    )
+                {
+                    if(FontSizeCombo.TextBoxText != FontCombo.SelectionFont.Size.ToString())
+                        FontSizeCombo.TextBoxText = FontCombo.SelectionFont.Size.ToString();
+                    FontComboBox.TextBoxText = FontCombo.SelectionFont.Name;
+
+                }
+                else
+                {
+                    FontSizeCombo.TextBoxText = "";
+                }
+
+
+                ItalicText.Checked = FontCombo.SelectionFont.Italic;
+                Bold.Checked = FontCombo.SelectionFont.Bold;
+                UnderlineText.Checked = FontCombo.SelectionFont.Underline;
+                StrikeOut.Checked = FontCombo.SelectionFont.Strikeout;
+            }
             else
             {
                 FontSizeCombo.TextBoxText = "";
+                FontComboBox.TextBoxText = "";
             }
-
-
-            ItalicText.Checked = FontCombo.SelectionFont.Italic;
-            Bold.Checked = FontCombo.SelectionFont.Bold;
-            UnderlineText.Checked = FontCombo.SelectionFont.Underline;
-            StrikeOut.Checked = FontCombo.SelectionFont.Strikeout;
-
 
         }
 
@@ -251,11 +291,31 @@ namespace WordPad
         {
             try
             {
-                Font fnt = new Font(FontCombo.SelectionFont.FontFamily, Int32.Parse(FontSizeCombo.TextBoxText), FontCombo.SelectionFont.Style);
-                FontCombo.SelectionFont = fnt;
-                
+                //Font fnt = new Font(FontCombo.SelectionFont.FontFamily, Int32.Parse(FontSizeCombo.TextBoxText), FontCombo.SelectionFont.Style);
+                //FontCombo.SelectionFont = fnt;
+
+                int start = FontCombo.SelectionStart;
+                int length = FontCombo.SelectionLength;
+
+                using (RichTextBox tmpRB = new RichTextBox())
+                {
+                    tmpRB.SelectAll();
+                    tmpRB.SelectedRtf = FontCombo.SelectedRtf;
+                    for (int i = 0; i < tmpRB.TextLength; ++i)
+                    {
+                        tmpRB.Select(i, 1);
+                        tmpRB.SelectionFont = new Font(tmpRB.SelectionFont.FontFamily, float.Parse(FontSizeCombo.TextBoxText), tmpRB.SelectionFont.Style);
+                    }
+                    tmpRB.SelectAll();
+                    FontCombo.SelectedRtf = tmpRB.SelectedRtf;
+                }
+              
+
+
             }
-            catch (Exception) { }
+            catch (Exception ex) {
+               // MessageBox.Show(ex.Message);
+            }
 
         }
 
@@ -526,6 +586,91 @@ namespace WordPad
                     break;
             }
             return true;
+        }
+
+        private void FontDown_Click(object sender, EventArgs e)
+        {
+            float currentValue = float.Parse(FontSizeCombo.TextBoxText);
+
+            if (currentValue == 1)
+                return;
+
+            if (currentValue <= 8 && currentValue > 1)
+                currentValue--;
+            else if (currentValue == 80)
+                currentValue -= 8;
+            else if (currentValue >= 90)
+            {
+                if (currentValue % 10 == 0)
+                    currentValue -= 10;
+                else currentValue -= currentValue % 10;
+            }
+            else
+            {
+                float prevValue = 8;
+                foreach (var item in FontSizeCombo.DropDownItems)
+                {
+                    if (float.Parse(item.Text) == currentValue)
+                    {
+                        FontSizeCombo.TextBoxText = prevValue.ToString();
+                        return;
+                    }
+                    else if (float.Parse(item.Text) <= currentValue)
+                        prevValue = float.Parse(item.Text);
+                    else
+                    {
+                        FontSizeCombo.TextBoxText = prevValue.ToString();
+                        return;
+                    }
+                }
+            }
+
+            FontSizeCombo.TextBoxText = currentValue.ToString();
+        }
+
+        private void FontUp_Click(object sender, EventArgs e)
+        {
+            float currentValue = float.Parse(FontSizeCombo.TextBoxText);
+
+            if (currentValue == 1630)
+                return;
+
+            if (currentValue <= 8 && currentValue > 1)
+                currentValue++;
+            else if (currentValue == 72)
+            {
+                currentValue += 8;
+            }
+            else if (currentValue >= 80)
+            {
+                if (currentValue % 10 == 0)
+                    currentValue += 10;
+                else currentValue += 10 - currentValue % 10;
+            }
+            else
+            {
+                bool flag = false;
+                foreach (var item in FontSizeCombo.DropDownItems)
+                {
+                    if (flag)
+                    {
+                        currentValue = float.Parse(item.Text);
+                        break;
+                    }
+
+                    if (float.Parse(item.Text) == currentValue)
+                    {
+                        flag = true;
+                    }
+                    if (float.Parse(item.Text) > currentValue)
+                    {
+                        currentValue = float.Parse(item.Text);
+                        break;
+                    }
+                }
+            }
+
+            FontSizeCombo.TextBoxText = currentValue.ToString();
         }
 
         //private void Subscript_Click(object sender, EventArgs e)
