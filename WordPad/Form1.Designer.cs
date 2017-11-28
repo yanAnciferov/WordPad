@@ -302,7 +302,6 @@
             resources.ApplyResources(this.FontSizeCombo, "FontSizeCombo");
             this.FontSizeCombo.TextBoxText = "";
             this.FontSizeCombo.TextBoxWidth = 50;
-            this.FontSizeCombo.TextBoxTextChanged += new System.EventHandler(this.FontSizeCombo_TextBoxTextChanged);
             // 
             // FontDown
             // 
@@ -355,6 +354,7 @@
             this.ForeColor.Image = ((System.Drawing.Image)(resources.GetObject("ForeColor.Image")));
             this.ForeColor.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
             this.ForeColor.SmallImage = ((System.Drawing.Image)(resources.GetObject("ForeColor.SmallImage")));
+            this.ForeColor.Click += new System.EventHandler(this.alignJustify_Click);
             // 
             // BackColor
             // 

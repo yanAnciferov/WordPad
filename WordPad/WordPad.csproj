@@ -75,13 +75,13 @@
     <Compile Include="FindWindow.Designer.cs">
       <DependentUpon>FindWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form1Ex.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FindEndReplace.resx">
       <DependentUpon>FindEndReplace.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.mzn-IR.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
