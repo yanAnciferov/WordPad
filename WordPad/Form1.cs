@@ -120,13 +120,13 @@ namespace WordPad
         {
             if (FontCombo.SelectedText.Length == 0)
             {
-                Copy.Enabled = false;
-                Cut.Enabled = false;
+                Cop.Enabled = false;
+                Cu.Enabled = false;
             }
             else
             {
-                Copy.Enabled = true;
-                Cut.Enabled = true;
+                Cop.Enabled = true;
+                Cu.Enabled = true;
             }
 
 
@@ -638,12 +638,16 @@ namespace WordPad
         {
             OpenFileDialog open = new OpenFileDialog();
             open.Filter = open.Filter = "BMP|*.bmp|JPEG|*.jpeg|PNG|*.png|JPEG|*.jpeg|EMF|*.emf|WMF|*.wmf|TIFF|*.tiff|ICO|*.ico|Все файлы изображений|*.BMP;*.JPG;*.GIF;*.PNG;*.ICO;*.EMF;*.WMF;*.TIFF";
+            open.FilterIndex = 100;
+
             DataFormats.Format format = DataFormats.GetFormat(DataFormats.Bitmap);
             if (open.ShowDialog() == DialogResult.OK)
             {
+                var tmp = Clipboard.GetDataObject();
                 Bitmap img = new Bitmap(open.FileName, false);
                 Clipboard.SetDataObject(img);
                 FontCombo.Paste(format);
+                Clipboard.SetDataObject(tmp);
             }
         }
 

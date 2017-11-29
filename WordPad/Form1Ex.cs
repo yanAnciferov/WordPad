@@ -23,12 +23,12 @@ namespace WordPad
           
         }
 
-        private void ribbonButton6_Click(object sender, EventArgs e)
+        private void SelectAll_Click(object sender, EventArgs e)
         {
             FontCombo.SelectAll();
         }
 
-        private void ribbonButton3_Click(object sender, EventArgs e)
+        private void Find_Click(object sender, EventArgs e)
         {
             if (finder == null)
             {
@@ -93,7 +93,7 @@ namespace WordPad
             }
         }
 
-        private void ribbonButton4_Click(object sender, EventArgs e)
+        private void Replace_Click(object sender, EventArgs e)
         {
 
             if (findeReplacer == null)
