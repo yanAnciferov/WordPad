@@ -19,6 +19,8 @@ namespace WordPad
             {
                 SaveFileButton.PerformClick();
             }
+
+          
         }
 
         private void ribbonButton6_Click(object sender, EventArgs e)
@@ -178,16 +180,14 @@ namespace WordPad
 
         }
 
-        private void Bold_Click(object sender, EventArgs e)
-        {
-            Bold.Checked = !Bold.Checked; 
-            UpdateSelectTextStyle();
-        }
+      
 
-        private void ItalicText_Click(object sender, EventArgs e)
+        private void StyleText_Click(object sender, EventArgs e)
         {
-            ItalicText.Checked = !ItalicText.Checked;
+            var btn = sender as RibbonButton;
+            btn.Checked = !btn.Checked;
             UpdateSelectTextStyle();
+            FontOptionChanged();
         }
 
         FontStyle GetStyleText()
@@ -231,27 +231,17 @@ namespace WordPad
                     tmpRB.SelectionFont = new Font(tmpRB.SelectionFont, GetStyleText());
                 }
                 tmpRB.SelectAll();
+                FontCombo.SelectionChanged -= this.MainTextBox_SelectionChanged;
                 FontCombo.SelectedRtf = tmpRB.SelectedRtf;
                
             }
 
             FontCombo.SelectionStart = start;
             FontCombo.SelectionLength = length;
+            FontCombo.SelectionChanged += this.MainTextBox_SelectionChanged;
         }
 
-        private void UnderlineText_Click(object sender, EventArgs e)
-        {
-            UnderlineText.Checked = !UnderlineText.Checked;
-            UpdateSelectTextStyle();
-
-        }
-
-        private void StrikeOut_Click(object sender, EventArgs e)
-        {
-            StrikeOut.Checked = !StrikeOut.Checked; 
-            UpdateSelectTextStyle();
-
-        }
+       
 
         private void text_Click(object sender, EventArgs e)
         {

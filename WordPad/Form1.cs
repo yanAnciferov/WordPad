@@ -21,6 +21,7 @@ namespace WordPad
         bool isSave = false;
         bool isChanged = false;
         string path;
+        
 
         public Form1()
         {
@@ -63,7 +64,26 @@ namespace WordPad
             }
         }
 
-    
+
+
+        public void FontOptionChanged()
+        {
+            FontFamily ff;
+            float size;
+            if (FontCombo.SelectionLength == 0)
+            {
+
+                ff = new FontFamily(FontComboBox.TextBoxText);
+                size = float.Parse(FontSizeCombo.TextBoxText);
+                FontCombo.SelectionFont = new Font(ff, size, GetStyleText());
+
+            }
+
+
+
+        }
+
+
         private void FontItem_Click(object sender, EventArgs e)
         {
             var btn = sender as RibbonButton;
@@ -79,13 +99,21 @@ namespace WordPad
                     tmpRB.SelectionFont = new Font(btn.Text, tmpRB.SelectionFont.Size, tmpRB.SelectionFont.Style);
                 }
                 tmpRB.SelectAll();
+                FontCombo.SelectionChanged -= this.MainTextBox_SelectionChanged;
                 FontCombo.SelectedRtf = tmpRB.SelectedRtf;
-                FontCombo.SelectionFont = tmpRB.SelectionFont;
+
+
+
+               
+
             }
 
             FontCombo.SelectionStart = start;
             FontCombo.SelectionLength = length;
-           
+            FontCombo.SelectionChanged += this.MainTextBox_SelectionChanged;
+            FontComboBox.TextBoxText = btn.Text;
+
+            FontOptionChanged();
         }
 
         private void MainTextBox_SelectionChanged(object sender, EventArgs e)
@@ -213,6 +241,11 @@ namespace WordPad
 
             var btn = sender as RibbonButton;
             fontReSize(float.Parse(btn.Text));
+
+            FontSizeCombo.TextBoxText = btn.Text;
+
+            FontOptionChanged();
+           
         }
 
 
@@ -230,10 +263,17 @@ namespace WordPad
                     tmpRB.SelectionFont = new Font(tmpRB.SelectionFont.FontFamily, newSize, tmpRB.SelectionFont.Style);
                 }
                 tmpRB.SelectAll();
+                FontCombo.TextChanged -= this.MainTextBox_TextChanged;
+                FontCombo.SelectionChanged -= this.MainTextBox_SelectionChanged;
                 FontCombo.SelectedRtf = tmpRB.SelectedRtf;
-           }
+
+                
+            }
             FontCombo.SelectionStart = start;
             FontCombo.SelectionLength = length;
+           
+            FontCombo.TextChanged += this.MainTextBox_TextChanged;
+            FontCombo.SelectionChanged += this.MainTextBox_SelectionChanged;
         }
        
         private void FontCombo_Click(object sender, EventArgs e)
@@ -328,20 +368,23 @@ namespace WordPad
                 {
                     tmpRB.Select(i, 1);
                     float currentValue = tmpRB.SelectionFont.Size;
-                    tmpRB.SelectionFont = new Font(tmpRB.SelectionFont.FontFamily, getDownFontSize(currentValue), tmpRB.Font.Style);
+                    tmpRB.SelectionFont = new Font(tmpRB.SelectionFont.FontFamily, getDownFontSize(currentValue), tmpRB.SelectionFont.Style);
 
                 }
                 tmpRB.SelectAll();
+                FontCombo.SelectionChanged -= this.MainTextBox_SelectionChanged;
                 FontCombo.SelectedRtf = tmpRB.SelectedRtf;
                 
             }
 
             FontCombo.SelectionStart = start;
             FontCombo.SelectionLength = length;
+            FontCombo.SelectionChanged += this.MainTextBox_SelectionChanged;
         }
 
         private void FontDown_Click(object sender, EventArgs e)
         {
+            FontCombo.SelectionChanged -= this.MainTextBox_SelectionChanged;
             if (FontSizeCombo.TextBoxText == "")
             {
                 TextFontDown();
@@ -349,7 +392,7 @@ namespace WordPad
             else
             {
                 float currentValue = float.Parse(FontSizeCombo.TextBoxText);
-
+               
                 if (currentValue == 1)
                     return;
 
@@ -388,7 +431,10 @@ namespace WordPad
                 }
                 fontReSize(currentValue);
                 FontSizeCombo.TextBoxText = currentValue.ToString();
+                
             }
+            FontCombo.SelectionChanged += this.MainTextBox_SelectionChanged;
+            FontOptionChanged();
         }
         private void TextFontUp()
         {
@@ -440,20 +486,23 @@ namespace WordPad
                         }
                     }
 
-                    tmpRB.SelectionFont = new Font(tmpRB.SelectionFont.FontFamily, currentValue, tmpRB.Font.Style);
+                    tmpRB.SelectionFont = new Font(tmpRB.SelectionFont.FontFamily, currentValue, tmpRB.SelectionFont.Style);
 
                 }
                 tmpRB.SelectAll();
+                FontCombo.SelectionChanged -= this.MainTextBox_SelectionChanged;
                 FontCombo.SelectedRtf = tmpRB.SelectedRtf;
                
             }
 
             FontCombo.SelectionStart = start;
             FontCombo.SelectionLength = length;
+            FontCombo.SelectionChanged += this.MainTextBox_SelectionChanged;
         }
 
         private void FontUp_Click(object sender, EventArgs e)
         {
+            FontCombo.SelectionChanged -= this.MainTextBox_SelectionChanged;
             if (FontSizeCombo.TextBoxText == "")
             {
                 TextFontUp();
@@ -466,7 +515,7 @@ namespace WordPad
 
                 if (currentValue == 1630)
                     return;
-
+                
                 if (currentValue <= 8 && currentValue > 1)
                     currentValue++;
                 else if (currentValue == 72)
@@ -503,8 +552,89 @@ namespace WordPad
                 }
                 fontReSize(currentValue);
                 FontSizeCombo.TextBoxText = currentValue.ToString();
+                
+            }
+            FontCombo.SelectionChanged += this.MainTextBox_SelectionChanged;
+            FontOptionChanged();
+        }
+
+        private void FontSizeCombo_TextBoxValidating(object sender, EventArgs e)
+        {
+            float f;
+            if(float.TryParse(FontSizeCombo.TextBoxText,out f))
+            {
+                if (f > 1630)
+                    FontSizeCombo.TextBoxText = "1630";
+                FontOptionChanged();
+            }else
+            {
+                FontSizeCombo.TextBoxText = FontCombo.Font.Size.ToString();
             }
         }
+
+        private void FontComboBox_TextBoxValidating(object sender, EventArgs e)
+        {
+            foreach (var item in FontComboBox.DropDownItems)
+            {
+                if(item.Text == FontComboBox.TextBoxText)
+                {
+                    FontOptionChanged();
+                    return;
+                }
+            }
+            FontComboBox.TextBoxText = FontCombo.Font.FontFamily.GetName(0);
+        }
+
+        private void TextColor_Click(object sender, EventArgs e)
+        {
+            FontCombo.SelectionColor = TextColor.Color;
+        }
+
+        private void TextColor_DoubleClick(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            colorDialog.Color = TextColor.Color;
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                TextColor.Color = colorDialog.Color;
+                FontCombo.SelectionColor = TextColor.Color;
+            }
+            else
+            {
+                FontCombo.Undo();
+            }
+        }
+
+        private void BgColor_Click(object sender, EventArgs e)
+        {
+            FontCombo.SelectionBackColor = BgColor.Color;
+        }
+
+        private void BgColor_DoubleClick(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            colorDialog.Color = BgColor.Color;
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                BgColor.Color = colorDialog.Color;
+                FontCombo.SelectionBackColor = BgColor.Color;
+            }
+            else
+            {
+                FontCombo.Undo();
+            }
+        }
+
+        private void DatePaste_Click(object sender, EventArgs e)
+        {
+            DateFomats DF = new DateFomats();
+            if(DF.ShowDialog() == DialogResult.OK)
+            {
+                FontCombo.SelectedText = DF.SelectedFormat;
+            }
+        }
+
+
         //private void Subscript_Click(object sender, EventArgs e)
         //{
         //    // Get the selected rich text data and selected character data

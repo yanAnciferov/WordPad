@@ -56,12 +56,12 @@
             this.FontDown = new System.Windows.Forms.RibbonButton();
             this.FontUp = new System.Windows.Forms.RibbonButton();
             this.ItalicText = new System.Windows.Forms.RibbonButton();
-            this.SubScript = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton8 = new System.Windows.Forms.RibbonButton();
             this.UnderlineText = new System.Windows.Forms.RibbonButton();
             this.StrikeOut = new System.Windows.Forms.RibbonButton();
-            this.ForeColor = new System.Windows.Forms.RibbonButton();
-            this.BackColor = new System.Windows.Forms.RibbonButton();
-            this.SuperScript = new System.Windows.Forms.RibbonButton();
+            this.TextColor = new System.Windows.Forms.RibbonColorChooser();
+            this.BgColor = new System.Windows.Forms.RibbonColorChooser();
+            this.ribbonButton13 = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
             this.alignLeft = new System.Windows.Forms.RibbonButton();
             this.ribbonButton9 = new System.Windows.Forms.RibbonButton();
@@ -77,6 +77,9 @@
             this.alignRigth = new System.Windows.Forms.RibbonButton();
             this.alignJustify = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel3 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonButton16 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton17 = new System.Windows.Forms.RibbonButton();
+            this.DatePaste = new System.Windows.Forms.RibbonButton();
             this.Pravka = new System.Windows.Forms.RibbonPanel();
             this.ribbonButton3 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton4 = new System.Windows.Forms.RibbonButton();
@@ -273,12 +276,12 @@
             this.FontPanel.Items.Add(this.FontDown);
             this.FontPanel.Items.Add(this.FontUp);
             this.FontPanel.Items.Add(this.ItalicText);
-            this.FontPanel.Items.Add(this.SubScript);
+            this.FontPanel.Items.Add(this.ribbonButton8);
             this.FontPanel.Items.Add(this.UnderlineText);
             this.FontPanel.Items.Add(this.StrikeOut);
-            this.FontPanel.Items.Add(this.ForeColor);
-            this.FontPanel.Items.Add(this.BackColor);
-            this.FontPanel.Items.Add(this.SuperScript);
+            this.FontPanel.Items.Add(this.TextColor);
+            this.FontPanel.Items.Add(this.BgColor);
+            this.FontPanel.Items.Add(this.ribbonButton13);
             resources.ApplyResources(this.FontPanel, "FontPanel");
             // 
             // FontComboBox
@@ -287,6 +290,7 @@
             this.FontComboBox.FlashIntervall = 10;
             resources.ApplyResources(this.FontComboBox, "FontComboBox");
             this.FontComboBox.TextBoxText = "";
+            this.FontComboBox.TextBoxValidating += new System.EventHandler(this.FontComboBox_TextBoxValidating);
             // 
             // Bold
             // 
@@ -294,7 +298,7 @@
             this.Bold.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
             this.Bold.SmallImage = ((System.Drawing.Image)(resources.GetObject("Bold.SmallImage")));
             resources.ApplyResources(this.Bold, "Bold");
-            this.Bold.Click += new System.EventHandler(this.Bold_Click);
+            this.Bold.Click += new System.EventHandler(this.StyleText_Click);
             // 
             // FontSizeCombo
             // 
@@ -302,6 +306,7 @@
             resources.ApplyResources(this.FontSizeCombo, "FontSizeCombo");
             this.FontSizeCombo.TextBoxText = "";
             this.FontSizeCombo.TextBoxWidth = 50;
+            this.FontSizeCombo.TextBoxValidating += new System.EventHandler(this.FontSizeCombo_TextBoxValidating);
             // 
             // FontDown
             // 
@@ -325,13 +330,14 @@
             this.ItalicText.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
             this.ItalicText.SmallImage = ((System.Drawing.Image)(resources.GetObject("ItalicText.SmallImage")));
             resources.ApplyResources(this.ItalicText, "ItalicText");
-            this.ItalicText.Click += new System.EventHandler(this.ItalicText_Click);
+            this.ItalicText.Click += new System.EventHandler(this.StyleText_Click);
             // 
-            // SubScript
+            // ribbonButton8
             // 
-            this.SubScript.Image = ((System.Drawing.Image)(resources.GetObject("SubScript.Image")));
-            this.SubScript.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
-            this.SubScript.SmallImage = ((System.Drawing.Image)(resources.GetObject("SubScript.SmallImage")));
+            this.ribbonButton8.Enabled = false;
+            this.ribbonButton8.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton8.Image")));
+            this.ribbonButton8.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
+            this.ribbonButton8.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton8.SmallImage")));
             // 
             // UnderlineText
             // 
@@ -339,7 +345,7 @@
             this.UnderlineText.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
             this.UnderlineText.SmallImage = ((System.Drawing.Image)(resources.GetObject("UnderlineText.SmallImage")));
             resources.ApplyResources(this.UnderlineText, "UnderlineText");
-            this.UnderlineText.Click += new System.EventHandler(this.UnderlineText_Click);
+            this.UnderlineText.Click += new System.EventHandler(this.StyleText_Click);
             // 
             // StrikeOut
             // 
@@ -347,26 +353,32 @@
             this.StrikeOut.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
             this.StrikeOut.SmallImage = ((System.Drawing.Image)(resources.GetObject("StrikeOut.SmallImage")));
             resources.ApplyResources(this.StrikeOut, "StrikeOut");
-            this.StrikeOut.Click += new System.EventHandler(this.StrikeOut_Click);
+            this.StrikeOut.Click += new System.EventHandler(this.StyleText_Click);
             // 
-            // ForeColor
+            // TextColor
             // 
-            this.ForeColor.Image = ((System.Drawing.Image)(resources.GetObject("ForeColor.Image")));
-            this.ForeColor.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
-            this.ForeColor.SmallImage = ((System.Drawing.Image)(resources.GetObject("ForeColor.SmallImage")));
-            this.ForeColor.Click += new System.EventHandler(this.alignJustify_Click);
+            this.TextColor.Color = System.Drawing.Color.Black;
+            this.TextColor.Image = ((System.Drawing.Image)(resources.GetObject("TextColor.Image")));
+            this.TextColor.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
+            this.TextColor.SmallImage = ((System.Drawing.Image)(resources.GetObject("TextColor.SmallImage")));
+            this.TextColor.DoubleClick += new System.EventHandler(this.TextColor_DoubleClick);
+            this.TextColor.Click += new System.EventHandler(this.TextColor_Click);
             // 
-            // BackColor
+            // BgColor
             // 
-            this.BackColor.Image = ((System.Drawing.Image)(resources.GetObject("BackColor.Image")));
-            this.BackColor.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
-            this.BackColor.SmallImage = ((System.Drawing.Image)(resources.GetObject("BackColor.SmallImage")));
+            this.BgColor.Color = System.Drawing.Color.Transparent;
+            this.BgColor.Image = ((System.Drawing.Image)(resources.GetObject("BgColor.Image")));
+            this.BgColor.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
+            this.BgColor.SmallImage = ((System.Drawing.Image)(resources.GetObject("BgColor.SmallImage")));
+            this.BgColor.DoubleClick += new System.EventHandler(this.BgColor_DoubleClick);
+            this.BgColor.Click += new System.EventHandler(this.BgColor_Click);
             // 
-            // SuperScript
+            // ribbonButton13
             // 
-            this.SuperScript.Image = ((System.Drawing.Image)(resources.GetObject("SuperScript.Image")));
-            this.SuperScript.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
-            this.SuperScript.SmallImage = ((System.Drawing.Image)(resources.GetObject("SuperScript.SmallImage")));
+            this.ribbonButton13.Enabled = false;
+            this.ribbonButton13.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton13.Image")));
+            this.ribbonButton13.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
+            this.ribbonButton13.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton13.SmallImage")));
             // 
             // ribbonPanel2
             // 
@@ -471,7 +483,31 @@
             // 
             // ribbonPanel3
             // 
+            this.ribbonPanel3.Items.Add(this.ribbonButton16);
+            this.ribbonPanel3.Items.Add(this.DatePaste);
             resources.ApplyResources(this.ribbonPanel3, "ribbonPanel3");
+            // 
+            // ribbonButton16
+            // 
+            this.ribbonButton16.DropDownItems.Add(this.ribbonButton17);
+            this.ribbonButton16.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton16.Image")));
+            this.ribbonButton16.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton16.SmallImage")));
+            this.ribbonButton16.Style = System.Windows.Forms.RibbonButtonStyle.SplitDropDown;
+            resources.ApplyResources(this.ribbonButton16, "ribbonButton16");
+            // 
+            // ribbonButton17
+            // 
+            this.ribbonButton17.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.ribbonButton17.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton17.Image")));
+            this.ribbonButton17.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton17.SmallImage")));
+            resources.ApplyResources(this.ribbonButton17, "ribbonButton17");
+            // 
+            // DatePaste
+            // 
+            this.DatePaste.Image = ((System.Drawing.Image)(resources.GetObject("DatePaste.Image")));
+            this.DatePaste.SmallImage = ((System.Drawing.Image)(resources.GetObject("DatePaste.SmallImage")));
+            resources.ApplyResources(this.DatePaste, "DatePaste");
+            this.DatePaste.Click += new System.EventHandler(this.DatePaste_Click);
             // 
             // Pravka
             // 
@@ -609,10 +645,13 @@
         private System.Windows.Forms.RibbonButton Paste;
         private System.Windows.Forms.RibbonButton FontUp;
         private System.Windows.Forms.RibbonButton FontDown;
-        private System.Windows.Forms.RibbonButton ForeColor;
-        private System.Windows.Forms.RibbonButton BackColor;
-        private System.Windows.Forms.RibbonButton SuperScript;
-        private System.Windows.Forms.RibbonButton SubScript;
+        private System.Windows.Forms.RibbonColorChooser TextColor;
+        private System.Windows.Forms.RibbonColorChooser BgColor;
+        private System.Windows.Forms.RibbonButton ribbonButton8;
+        private System.Windows.Forms.RibbonButton ribbonButton13;
+        private System.Windows.Forms.RibbonButton DatePaste;
+        private System.Windows.Forms.RibbonButton ribbonButton16;
+        private System.Windows.Forms.RibbonButton ribbonButton17;
     }
 }
 

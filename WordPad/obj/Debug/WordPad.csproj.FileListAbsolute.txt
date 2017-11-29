@@ -20,11 +20,8 @@ C:\Users\Yan\Desktop\Новая папка\WordPad\WordPad\obj\Debug\WordPad.exe
 C:\Users\Yan\Desktop\Новая папка\WordPad\WordPad\obj\Debug\WordPad.pdb
 C:\Users\Yan\Desktop\Новая папка\WordPad\WordPad\obj\Debug\WordPad.FindWindow.resources
 C:\Users\Yan\Desktop\Новая папка\WordPad\WordPad\obj\Debug\WordPad.FindEndReplace.resources
-C:\Users\Yan\Desktop\Новая папка\WordPad\WordPad\bin\Debug\mzn-IR\WordPad.resources.dll
 C:\Users\Yan\Desktop\Новая папка\WordPad\WordPad\bin\Debug\ru\WordPad.resources.dll
-C:\Users\Yan\Desktop\Новая папка\WordPad\WordPad\obj\Debug\WordPad.Form1.mzn-IR.resources
 C:\Users\Yan\Desktop\Новая папка\WordPad\WordPad\obj\Debug\WordPad.Form1.ru.resources
-C:\Users\Yan\Desktop\Новая папка\WordPad\WordPad\obj\Debug\mzn-IR\WordPad.resources.dll
 C:\Users\Yan\Desktop\Новая папка\WordPad\WordPad\obj\Debug\ru\WordPad.resources.dll
 C:\Users\Yan\Desktop\Новая папка\WordPad\WordPad\obj\Debug\WordPad.csprojResolveAssemblyReference.cache
 C:\Users\anci_oq88\Desktop\WordPad\WordPad\bin\Debug\WordPad.exe.config
@@ -42,3 +39,4 @@ C:\Users\anci_oq88\Desktop\WordPad\WordPad\obj\Debug\WordPad.Properties.Resource
 C:\Users\anci_oq88\Desktop\WordPad\WordPad\obj\Debug\WordPad.Form1.ru.resources
 C:\Users\anci_oq88\Desktop\WordPad\WordPad\obj\Debug\WordPad.csproj.GenerateResource.Cache
 C:\Users\anci_oq88\Desktop\WordPad\WordPad\obj\Debug\ru\WordPad.resources.dll
+C:\Users\Yan\Desktop\Новая папка\WordPad\WordPad\obj\Debug\WordPad.DateFomats.resources
