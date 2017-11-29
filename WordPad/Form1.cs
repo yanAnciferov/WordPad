@@ -634,18 +634,28 @@ namespace WordPad
             }
         }
 
+        private void PasteImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = open.Filter = "BMP|*.bmp|JPEG|*.jpeg|PNG|*.png|JPEG|*.jpeg|EMF|*.emf|WMF|*.wmf|TIFF|*.tiff|ICO|*.ico|Все файлы изображений|*.BMP;*.JPG;*.GIF;*.PNG;*.ICO;*.EMF;*.WMF;*.TIFF";
+            DataFormats.Format format = DataFormats.GetFormat(DataFormats.Bitmap);
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                Bitmap img = new Bitmap(open.FileName, false);
+                Clipboard.SetDataObject(img);
+                FontCombo.Paste(format);
+            }
+        }
 
-        //private void Subscript_Click(object sender, EventArgs e)
-        //{
-        //    // Get the selected rich text data and selected character data
-        //    string selectedRtf = FontCombo.SelectedRtf;
-        //    string selectedText = FontCombo.SelectedText;
+        private void IndentRigth_Click(object sender, EventArgs e)
+        {
+            
+            FontCombo.SelectionIndent += 50;
+        }
 
-        //    // Now lets insert \super
-        //    selectedRtf = selectedRtf.Insert(selectedRtf.IndexOf(selectedText), "\\sub");
-
-        //    // Now set the Rtf back to the control
-        //    FontCombo.SelectedRtf = selectedRtf;
-        //}
+        private void IndentLeft_Click(object sender, EventArgs e)
+        {
+            FontCombo.SelectionIndent -= 50;
+        }
     }
 }

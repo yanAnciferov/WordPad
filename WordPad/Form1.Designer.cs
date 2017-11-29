@@ -45,10 +45,9 @@
             this.Exit = new System.Windows.Forms.RibbonOrbMenuItem();
             this.MainTab = new System.Windows.Forms.RibbonTab();
             this.Buffer = new System.Windows.Forms.RibbonPanel();
-            this.Paste = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton7 = new System.Windows.Forms.RibbonButton();
-            this.Cut = new System.Windows.Forms.RibbonButton();
             this.Copy = new System.Windows.Forms.RibbonButton();
+            this.Cut = new System.Windows.Forms.RibbonButton();
+            this.Paste = new System.Windows.Forms.RibbonButton();
             this.FontPanel = new System.Windows.Forms.RibbonPanel();
             this.FontComboBox = new System.Windows.Forms.RibbonComboBox();
             this.Bold = new System.Windows.Forms.RibbonButton();
@@ -63,22 +62,25 @@
             this.BgColor = new System.Windows.Forms.RibbonColorChooser();
             this.ribbonButton13 = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
+            this.IndentLeft = new System.Windows.Forms.RibbonButton();
+            this.IndentRigth = new System.Windows.Forms.RibbonButton();
             this.alignLeft = new System.Windows.Forms.RibbonButton();
             this.ribbonButton9 = new System.Windows.Forms.RibbonButton();
             this.ribbonCheckBox1 = new System.Windows.Forms.RibbonCheckBox();
             this.ribbonCheckBox2 = new System.Windows.Forms.RibbonCheckBox();
             this.ribbonCheckBox3 = new System.Windows.Forms.RibbonCheckBox();
             this.ribbonCheckBox4 = new System.Windows.Forms.RibbonCheckBox();
+            this.alignJustify = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton14 = new System.Windows.Forms.RibbonButton();
+            this.alignCenter = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton12 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton7 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton10 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton11 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton12 = new System.Windows.Forms.RibbonButton();
-            this.alignCenter = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton14 = new System.Windows.Forms.RibbonButton();
             this.alignRigth = new System.Windows.Forms.RibbonButton();
-            this.alignJustify = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel3 = new System.Windows.Forms.RibbonPanel();
             this.ribbonButton16 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton17 = new System.Windows.Forms.RibbonButton();
+            this.PasteImage = new System.Windows.Forms.RibbonButton();
             this.DatePaste = new System.Windows.Forms.RibbonButton();
             this.Pravka = new System.Windows.Forms.RibbonPanel();
             this.ribbonButton3 = new System.Windows.Forms.RibbonButton();
@@ -125,7 +127,7 @@
             this.ribbon1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ribbon1.BorderMode = System.Windows.Forms.RibbonWindowMode.InsideWindow;
             this.ribbon1.CaptionBarVisible = false;
-            this.ribbon1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ribbon1.Cursor = System.Windows.Forms.Cursors.Default;
             resources.ApplyResources(this.ribbon1, "ribbon1");
             this.ribbon1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.ribbon1.Minimized = false;
@@ -146,7 +148,7 @@
             this.ribbon1.OrbDropDown.MenuItems.Add(this.Exit);
             this.ribbon1.OrbDropDown.Name = "";
             this.ribbon1.OrbDropDown.OptionItemsPadding = 10;
-            this.ribbon1.OrbDropDown.RecentItemsCaption = "нргп";
+            this.ribbon1.OrbDropDown.RecentItemsCaption = "";
             this.ribbon1.OrbDropDown.Size = ((System.Drawing.Size)(resources.GetObject("ribbon1.OrbDropDown.Size")));
             this.ribbon1.OrbDropDown.TabIndex = ((int)(resources.GetObject("ribbon1.OrbDropDown.TabIndex")));
             this.ribbon1.OrbImage = null;
@@ -227,27 +229,18 @@
             // 
             // Buffer
             // 
-            this.Buffer.Items.Add(this.Paste);
-            this.Buffer.Items.Add(this.Cut);
             this.Buffer.Items.Add(this.Copy);
+            this.Buffer.Items.Add(this.Cut);
+            this.Buffer.Items.Add(this.Paste);
             resources.ApplyResources(this.Buffer, "Buffer");
             // 
-            // Paste
+            // Copy
             // 
-            this.Paste.DropDownItems.Add(this.ribbonButton7);
-            this.Paste.Image = ((System.Drawing.Image)(resources.GetObject("Paste.Image")));
-            this.Paste.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
-            this.Paste.SmallImage = ((System.Drawing.Image)(resources.GetObject("Paste.SmallImage")));
-            resources.ApplyResources(this.Paste, "Paste");
-            this.Paste.Click += new System.EventHandler(this.Paste_Click);
-            // 
-            // ribbonButton7
-            // 
-            this.ribbonButton7.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
-            this.ribbonButton7.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton7.Image")));
-            this.ribbonButton7.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
-            this.ribbonButton7.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton7.SmallImage")));
-            resources.ApplyResources(this.ribbonButton7, "ribbonButton7");
+            this.Copy.Image = ((System.Drawing.Image)(resources.GetObject("Copy.Image")));
+            this.Copy.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.Copy.SmallImage = ((System.Drawing.Image)(resources.GetObject("Copy.SmallImage")));
+            resources.ApplyResources(this.Copy, "Copy");
+            this.Copy.Click += new System.EventHandler(this.Copy_Click);
             // 
             // Cut
             // 
@@ -257,13 +250,13 @@
             resources.ApplyResources(this.Cut, "Cut");
             this.Cut.Click += new System.EventHandler(this.Cut_Click);
             // 
-            // Copy
+            // Paste
             // 
-            this.Copy.Image = ((System.Drawing.Image)(resources.GetObject("Copy.Image")));
-            this.Copy.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
-            this.Copy.SmallImage = ((System.Drawing.Image)(resources.GetObject("Copy.SmallImage")));
-            resources.ApplyResources(this.Copy, "Copy");
-            this.Copy.Click += new System.EventHandler(this.Copy_Click);
+            this.Paste.Image = ((System.Drawing.Image)(resources.GetObject("Paste.Image")));
+            this.Paste.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.Paste.SmallImage = ((System.Drawing.Image)(resources.GetObject("Paste.SmallImage")));
+            resources.ApplyResources(this.Paste, "Paste");
+            this.Paste.Click += new System.EventHandler(this.Paste_Click);
             // 
             // FontPanel
             // 
@@ -287,6 +280,7 @@
             // FontComboBox
             // 
             this.FontComboBox.DrawIconsBar = false;
+            this.FontComboBox.DropDownMaxHeight = 500;
             this.FontComboBox.FlashIntervall = 10;
             resources.ApplyResources(this.FontComboBox, "FontComboBox");
             this.FontComboBox.TextBoxText = "";
@@ -303,6 +297,8 @@
             // FontSizeCombo
             // 
             this.FontSizeCombo.DrawIconsBar = false;
+            this.FontSizeCombo.DropDownMaxHeight = 500;
+            this.FontSizeCombo.FlashIntervall = 10;
             resources.ApplyResources(this.FontSizeCombo, "FontSizeCombo");
             this.FontSizeCombo.TextBoxText = "";
             this.FontSizeCombo.TextBoxWidth = 50;
@@ -383,16 +379,32 @@
             // ribbonPanel2
             // 
             this.ribbonPanel2.FlowsTo = System.Windows.Forms.RibbonPanelFlowDirection.Right;
+            this.ribbonPanel2.Items.Add(this.IndentLeft);
+            this.ribbonPanel2.Items.Add(this.IndentRigth);
             this.ribbonPanel2.Items.Add(this.alignLeft);
             this.ribbonPanel2.Items.Add(this.ribbonButton9);
-            this.ribbonPanel2.Items.Add(this.ribbonButton10);
-            this.ribbonPanel2.Items.Add(this.ribbonButton11);
             this.ribbonPanel2.Items.Add(this.ribbonButton12);
-            this.ribbonPanel2.Items.Add(this.alignCenter);
             this.ribbonPanel2.Items.Add(this.ribbonButton14);
-            this.ribbonPanel2.Items.Add(this.alignRigth);
+            this.ribbonPanel2.Items.Add(this.alignCenter);
             this.ribbonPanel2.Items.Add(this.alignJustify);
+            this.ribbonPanel2.Items.Add(this.alignRigth);
             resources.ApplyResources(this.ribbonPanel2, "ribbonPanel2");
+            // 
+            // IndentLeft
+            // 
+            this.IndentLeft.Image = ((System.Drawing.Image)(resources.GetObject("IndentLeft.Image")));
+            this.IndentLeft.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
+            this.IndentLeft.SmallImage = ((System.Drawing.Image)(resources.GetObject("IndentLeft.SmallImage")));
+            this.IndentLeft.DoubleClick += new System.EventHandler(this.IndentLeft_Click);
+            this.IndentLeft.Click += new System.EventHandler(this.IndentLeft_Click);
+            // 
+            // IndentRigth
+            // 
+            this.IndentRigth.Image = ((System.Drawing.Image)(resources.GetObject("IndentRigth.Image")));
+            this.IndentRigth.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
+            this.IndentRigth.SmallImage = ((System.Drawing.Image)(resources.GetObject("IndentRigth.SmallImage")));
+            this.IndentRigth.DoubleClick += new System.EventHandler(this.IndentRigth_Click);
+            this.IndentRigth.Click += new System.EventHandler(this.IndentRigth_Click);
             // 
             // alignLeft
             // 
@@ -409,9 +421,8 @@
             this.ribbonButton9.DropDownItems.Add(this.ribbonCheckBox3);
             this.ribbonButton9.DropDownItems.Add(this.ribbonCheckBox4);
             this.ribbonButton9.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton9.Image")));
-            this.ribbonButton9.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.DropDown;
+            this.ribbonButton9.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
             this.ribbonButton9.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton9.SmallImage")));
-            this.ribbonButton9.Style = System.Windows.Forms.RibbonButtonStyle.DropDown;
             // 
             // ribbonCheckBox1
             // 
@@ -433,25 +444,20 @@
             this.ribbonCheckBox4.Style = System.Windows.Forms.RibbonCheckBox.CheckBoxStyle.RadioButton;
             resources.ApplyResources(this.ribbonCheckBox4, "ribbonCheckBox4");
             // 
-            // ribbonButton10
+            // alignJustify
             // 
-            this.ribbonButton10.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton10.Image")));
-            this.ribbonButton10.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
-            this.ribbonButton10.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton10.SmallImage")));
+            this.alignJustify.Enabled = false;
+            this.alignJustify.Image = ((System.Drawing.Image)(resources.GetObject("alignJustify.Image")));
+            this.alignJustify.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
+            this.alignJustify.SmallImage = ((System.Drawing.Image)(resources.GetObject("alignJustify.SmallImage")));
+            this.alignJustify.Click += new System.EventHandler(this.alignJustify_Click);
             // 
-            // ribbonButton11
+            // ribbonButton14
             // 
-            this.ribbonButton11.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton11.Image")));
-            this.ribbonButton11.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
-            this.ribbonButton11.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton11.SmallImage")));
-            // 
-            // ribbonButton12
-            // 
-            this.ribbonButton12.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton12.Image")));
-            this.ribbonButton12.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
-            this.ribbonButton12.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
-            this.ribbonButton12.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton12.SmallImage")));
-            this.ribbonButton12.Style = System.Windows.Forms.RibbonButtonStyle.SplitDropDown;
+            this.ribbonButton14.Enabled = false;
+            this.ribbonButton14.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton14.Image")));
+            this.ribbonButton14.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
+            this.ribbonButton14.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton14.SmallImage")));
             // 
             // alignCenter
             // 
@@ -460,11 +466,34 @@
             this.alignCenter.SmallImage = ((System.Drawing.Image)(resources.GetObject("alignCenter.SmallImage")));
             this.alignCenter.Click += new System.EventHandler(this.alignCenter_Click);
             // 
-            // ribbonButton14
+            // ribbonButton12
             // 
-            this.ribbonButton14.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton14.Image")));
-            this.ribbonButton14.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
-            this.ribbonButton14.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton14.SmallImage")));
+            this.ribbonButton12.DropDownItems.Add(this.ribbonButton7);
+            this.ribbonButton12.DropDownItems.Add(this.ribbonButton10);
+            this.ribbonButton12.DropDownItems.Add(this.ribbonButton11);
+            this.ribbonButton12.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton12.Image")));
+            this.ribbonButton12.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
+            this.ribbonButton12.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
+            this.ribbonButton12.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton12.SmallImage")));
+            // 
+            // ribbonButton7
+            // 
+            this.ribbonButton7.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.ribbonButton7.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton7.Image")));
+            this.ribbonButton7.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.ribbonButton7.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton7.SmallImage")));
+            // 
+            // ribbonButton10
+            // 
+            this.ribbonButton10.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.ribbonButton10.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton10.Image")));
+            this.ribbonButton10.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton10.SmallImage")));
+            // 
+            // ribbonButton11
+            // 
+            this.ribbonButton11.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.ribbonButton11.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton11.Image")));
+            this.ribbonButton11.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton11.SmallImage")));
             // 
             // alignRigth
             // 
@@ -474,13 +503,6 @@
             this.alignRigth.SmallImage = ((System.Drawing.Image)(resources.GetObject("alignRigth.SmallImage")));
             this.alignRigth.Click += new System.EventHandler(this.alignRigth_Click);
             // 
-            // alignJustify
-            // 
-            this.alignJustify.Image = ((System.Drawing.Image)(resources.GetObject("alignJustify.Image")));
-            this.alignJustify.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
-            this.alignJustify.SmallImage = ((System.Drawing.Image)(resources.GetObject("alignJustify.SmallImage")));
-            this.alignJustify.Click += new System.EventHandler(this.alignJustify_Click);
-            // 
             // ribbonPanel3
             // 
             this.ribbonPanel3.Items.Add(this.ribbonButton16);
@@ -489,18 +511,19 @@
             // 
             // ribbonButton16
             // 
-            this.ribbonButton16.DropDownItems.Add(this.ribbonButton17);
+            this.ribbonButton16.DropDownItems.Add(this.PasteImage);
             this.ribbonButton16.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton16.Image")));
             this.ribbonButton16.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton16.SmallImage")));
-            this.ribbonButton16.Style = System.Windows.Forms.RibbonButtonStyle.SplitDropDown;
             resources.ApplyResources(this.ribbonButton16, "ribbonButton16");
+            this.ribbonButton16.Click += new System.EventHandler(this.PasteImage_Click);
             // 
-            // ribbonButton17
+            // PasteImage
             // 
-            this.ribbonButton17.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
-            this.ribbonButton17.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton17.Image")));
-            this.ribbonButton17.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton17.SmallImage")));
-            resources.ApplyResources(this.ribbonButton17, "ribbonButton17");
+            this.PasteImage.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.PasteImage.Image = ((System.Drawing.Image)(resources.GetObject("PasteImage.Image")));
+            this.PasteImage.SmallImage = ((System.Drawing.Image)(resources.GetObject("PasteImage.SmallImage")));
+            resources.ApplyResources(this.PasteImage, "PasteImage");
+            this.PasteImage.Click += new System.EventHandler(this.PasteImage_Click);
             // 
             // DatePaste
             // 
@@ -563,6 +586,7 @@
             // 
             resources.ApplyResources(this.FontCombo, "FontCombo");
             this.FontCombo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.FontCombo.EnableAutoDragDrop = true;
             this.FontCombo.HideSelection = false;
             this.FontCombo.Name = "FontCombo";
             this.FontCombo.SelectionChanged += new System.EventHandler(this.MainTextBox_SelectionChanged);
@@ -615,8 +639,8 @@
         private System.Windows.Forms.RichTextBox FontCombo;
         private System.Windows.Forms.RibbonButton alignLeft;
         private System.Windows.Forms.RibbonButton ribbonButton9;
-        private System.Windows.Forms.RibbonButton ribbonButton10;
-        private System.Windows.Forms.RibbonButton ribbonButton11;
+        private System.Windows.Forms.RibbonButton IndentLeft;
+        private System.Windows.Forms.RibbonButton IndentRigth;
         private System.Windows.Forms.RibbonButton ribbonButton12;
         private System.Windows.Forms.RibbonButton alignCenter;
         private System.Windows.Forms.RibbonButton ribbonButton14;
@@ -641,8 +665,6 @@
         private System.Windows.Forms.RibbonButton Open;
         private System.Windows.Forms.RibbonSeparator ribbonSeparator2;
         private System.Windows.Forms.RibbonOrbMenuItem Exit;
-        private System.Windows.Forms.RibbonButton ribbonButton7;
-        private System.Windows.Forms.RibbonButton Paste;
         private System.Windows.Forms.RibbonButton FontUp;
         private System.Windows.Forms.RibbonButton FontDown;
         private System.Windows.Forms.RibbonColorChooser TextColor;
@@ -651,7 +673,11 @@
         private System.Windows.Forms.RibbonButton ribbonButton13;
         private System.Windows.Forms.RibbonButton DatePaste;
         private System.Windows.Forms.RibbonButton ribbonButton16;
-        private System.Windows.Forms.RibbonButton ribbonButton17;
+        private System.Windows.Forms.RibbonButton PasteImage;
+        private System.Windows.Forms.RibbonButton Paste;
+        private System.Windows.Forms.RibbonButton ribbonButton7;
+        private System.Windows.Forms.RibbonButton ribbonButton10;
+        private System.Windows.Forms.RibbonButton ribbonButton11;
     }
 }
 

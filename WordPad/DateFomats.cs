@@ -18,7 +18,8 @@ namespace WordPad
 
             foreach (var item in DateTime.Now.GetDateTimeFormats())
             {
-                List.Items.Add(item);
+                if(!List.Items.Contains(item))
+                    List.Items.Add(item);
             }
             List.SelectedIndex = 0;
         }

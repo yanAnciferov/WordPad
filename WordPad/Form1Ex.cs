@@ -129,10 +129,7 @@ namespace WordPad
 
         private void Paste_Click(object sender, EventArgs e)
         {
-            if (Clipboard.ContainsText())
-                FontCombo.SelectedText = Clipboard.GetText();
-
-
+            FontCombo.Paste();
         }
 
         private void Copy_Click(object sender, EventArgs e)
