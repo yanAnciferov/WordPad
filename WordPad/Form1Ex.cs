@@ -17,7 +17,7 @@ namespace WordPad
         {
             if (e.KeyCode == Keys.S && e.Control)
             {
-                SaveFileButton.PerformClick();
+                Save.PerformClick();
             }
 
           
@@ -275,7 +275,7 @@ namespace WordPad
             FontCombo.Rtf = "";
             isSave = false;
             isChanged = false;
-            path = "";
+            CreateTab("Новая вкладка");
             Text = "Документ - WordPad";
         }
 
@@ -295,6 +295,8 @@ namespace WordPad
 
                     isSave = true;
                     path = save.FileName;
+                    tabs[TabGroup.SelectedIndex].IsSave = true;
+                    tabs[TabGroup.SelectedIndex].Path = path;
                 }
             }
             else
@@ -332,17 +334,21 @@ namespace WordPad
                 try
                 {
                     FileInfo file = new FileInfo(open.FileName);
-
+                    RichTextBox rich = new RichTextBox();
                     if (open.FilterIndex == 1)
                     {
-                        FontCombo.Text = File.ReadAllText(open.FileName, Encoding.Default);
+                        rich.Text = File.ReadAllText(open.FileName, Encoding.Default);
                     }
                     if (open.FilterIndex == 2)
-                        FontCombo.Rtf = File.ReadAllText(open.FileName, Encoding.Default);
+                        rich.Rtf = File.ReadAllText(open.FileName, Encoding.Default);
 
-                    path = open.FileName;
-                    isChanged = false;
-                    isSave = true;
+                    Tab newTab = new Tab(new TabPage(), rich, new FileInfo(open.FileName).Name.Split('.')[0]);
+                    newTab.Path = open.FileName;
+                    newTab.IsChanged = false;
+                    newTab.IsSave = true;
+
+                    CreateTab(newTab);
+
                     Text = file.Name.Split('.')[0] + " - WordPad";
 
                 }

@@ -185,40 +185,6 @@
   <data name="ribbon1.OrbDropDown.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="ribbon1.OrbDropDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>527, 295</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ribbon1.OrbDropDown.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="ribbon1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>917, 132</value>
-  </data>
-  <data name="ribbon1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="MainTab.Text" xml:space="preserve">
-    <value>Главная</value>
-  </data>
-  <data name="ViewTab.Text" xml:space="preserve">
-    <value>Вид</value>
-  </data>
-  <data name="ribbon1.Text" xml:space="preserve">
-    <value>ribbon1</value>
-  </data>
-  <data name="&gt;&gt;ribbon1.Name" xml:space="preserve">
-    <value>ribbon1</value>
-  </data>
-  <data name="&gt;&gt;ribbon1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Ribbon, System.Windows.Forms.Ribbon35, Version=3.5.8.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;ribbon1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ribbon1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="Create.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -332,6 +298,50 @@
   <data name="Save.Text" xml:space="preserve">
     <value>Сохранить</value>
   </data>
+  <data name="rtf.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABpJREFUWEftwQEBAAAAgiD/r25IQAAAAMC5GhAgAAGdeElDAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="rtf.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAcFJREFUaEPt
+        mTtOxEAQRH0wrsBdyAjBCRLJpmQQQYBETETADbgGByAhWWhpa1Vqajzr8fyEbanUU9Vtj5880e7wL6/L
+        m4fxeve0r6Wr3eP+d0/TeHiFZZc97PPru6run9/yQbQCeH3/yAPREiALRGuAxRAAuL17OUp5nyFX3lfu
+        mzzAIggPgE3UxpwhV95X7psUQDKEB8BG3nMGr+Zi3hQCMM2GAEBNGcCU7J0Orxe/WgDEtG4APrMs31Me
+        WajyHGc8YzULAK/Z+8r90AzPYo4znrGa9Qvwg1XOHmLPMyw/x34RQA/aAForCYDPJYt7fg3PsyoLVb+G
+        ugA4pfo1VARAyd9nVWVWIe9ZuD8JoCdtAK2VBIAzyNWfzdicypTn+9kjywpga5aa44o1xB59ZCGfDMAb
+        KY8N1HoqswrxDGe8TgKICQ+voSIANbVOAJxBHBX2nPnKfZWx5yw0azUZwCrED0dPVe5zpryqql/0C0x5
+        ZFj7GZbv8b1JAD1pA2it2QDqN8qW2gBaqxjA2fnFH6XkMRUFWOJPVfUvwH3v1VxMxb9A6KV8NvfFoeIA
+        fh3KugOopdUBjHZDZ0r/577faxh+ABHBu+hAT8eyAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="rtf.Text" xml:space="preserve">
+    <value>Документ в формате RTF</value>
+  </data>
+  <data name="text.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABpJREFUWEftwQEBAAAAgiD/r25IQAAAAMC5GhAgAAGdeElDAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="text.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAb5JREFUaEPt
+        mTFOxDAURHM2LkJNRwEFZUougcQWIEFBQ0dJxSm4AOIKC1/aWY0+Y3vj2LFFEunpe+b/xBnF1e7wL6+H
+        u8vxeXe9X4qn3dX+d09jPLzCvMse9v31uShvr7flQrQK8PF+XyZEywBFQrQOMDsEArw83hxR2nvwlfaV
+        +4YPMCuED4BN1MbswVfaV+4bKkB2CB8AG3nNHrSaS2kjFMCYHAIBlsQCxLB3Orxe+moRIMW6A/CZZXxP
+        aXihynPs8YzVIgF4zdpX7odmeBZz7PGM1aJfgB+sfNaANc8wfo71rAA9sAVoTVYAPpcM9/wammeVF6p+
+        DboIcEr1a1AlgMLfZ1V5VoHXDO7PCtATW4DWZAXAGeTqz2ZqTnlK8/2s4RUNYGtGzXHFGrBGH15IZwfg
+        jZTGBmod86wCnmGP11kBUuDhS1AlwJKsMwDOII4Ka/Z85b7yWLMXmrWaHcAq4Iejpyr32VNaVdWv+gVi
+        Gh7WfobxPb43K0BPbAFaMzmA+o2yJVuA1lQLcHF+9gf4fi42n6L6F1AvAi/WO5UmAXL8ENsXSOFfaKpO
+        UT1AbVYXYLQbOiP/n/t+r2H4ARpCTEUixFXhAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="text.Text" xml:space="preserve">
+    <value>Текстовый документ</value>
+  </data>
   <data name="SaveAs.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -384,50 +394,6 @@
   <data name="SaveAs.Text" xml:space="preserve">
     <value>Сохранить как</value>
   </data>
-  <data name="rtf.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAABpJREFUWEftwQEBAAAAgiD/r25IQAAAAMC5GhAgAAGdeElDAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="rtf.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAcFJREFUaEPt
-        mTtOxEAQRH0wrsBdyAjBCRLJpmQQQYBETETADbgGByAhWWhpa1Vqajzr8fyEbanUU9Vtj5880e7wL6/L
-        m4fxeve0r6Wr3eP+d0/TeHiFZZc97PPru6run9/yQbQCeH3/yAPREiALRGuAxRAAuL17OUp5nyFX3lfu
-        mzzAIggPgE3UxpwhV95X7psUQDKEB8BG3nMGr+Zi3hQCMM2GAEBNGcCU7J0Orxe/WgDEtG4APrMs31Me
-        WajyHGc8YzULAK/Z+8r90AzPYo4znrGa9Qvwg1XOHmLPMyw/x34RQA/aAForCYDPJYt7fg3PsyoLVb+G
-        ugA4pfo1VARAyd9nVWVWIe9ZuD8JoCdtAK2VBIAzyNWfzdicypTn+9kjywpga5aa44o1xB59ZCGfDMAb
-        KY8N1HoqswrxDGe8TgKICQ+voSIANbVOAJxBHBX2nPnKfZWx5yw0azUZwCrED0dPVe5zpryqql/0C0x5
-        ZFj7GZbv8b1JAD1pA2it2QDqN8qW2gBaqxjA2fnFH6XkMRUFWOJPVfUvwH3v1VxMxb9A6KV8NvfFoeIA
-        fh3KugOopdUBjHZDZ0r/577faxh+ABHBu+hAT8eyAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="rtf.Text" xml:space="preserve">
-    <value>Документ в формате RTF</value>
-  </data>
-  <data name="text.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAABpJREFUWEftwQEBAAAAgiD/r25IQAAAAMC5GhAgAAGdeElDAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="text.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAb5JREFUaEPt
-        mTFOxDAURHM2LkJNRwEFZUougcQWIEFBQ0dJxSm4AOIKC1/aWY0+Y3vj2LFFEunpe+b/xBnF1e7wL6+H
-        u8vxeXe9X4qn3dX+d09jPLzCvMse9v31uShvr7flQrQK8PF+XyZEywBFQrQOMDsEArw83hxR2nvwlfaV
-        +4YPMCuED4BN1MbswVfaV+4bKkB2CB8AG3nNHrSaS2kjFMCYHAIBlsQCxLB3Orxe+moRIMW6A/CZZXxP
-        aXihynPs8YzVIgF4zdpX7odmeBZz7PGM1aJfgB+sfNaANc8wfo71rAA9sAVoTVYAPpcM9/wammeVF6p+
-        DboIcEr1a1AlgMLfZ1V5VoHXDO7PCtATW4DWZAXAGeTqz2ZqTnlK8/2s4RUNYGtGzXHFGrBGH15IZwfg
-        jZTGBmod86wCnmGP11kBUuDhS1AlwJKsMwDOII4Ka/Z85b7yWLMXmrWaHcAq4Iejpyr32VNaVdWv+gVi
-        Gh7WfobxPb43K0BPbAFaMzmA+o2yJVuA1lQLcHF+9gf4fi42n6L6F1AvAi/WO5UmAXL8ENsXSOFfaKpO
-        UT1AbVYXYLQbOiP/n/t+r2H4ARpCTEUixFXhAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="text.Text" xml:space="preserve">
-    <value>Текстовый документ</value>
-  </data>
   <data name="Exit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -443,8 +409,18 @@
   <data name="Exit.Text" xml:space="preserve">
     <value>Выход</value>
   </data>
-  <data name="Buffer.Text" xml:space="preserve">
-    <value>Буфер обмена</value>
+  <data name="ribbon1.OrbDropDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>527, 295</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ribbon1.OrbDropDown.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ribbon1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>917, 132</value>
+  </data>
+  <data name="ribbon1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="Cop.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -501,8 +477,8 @@
   <data name="Past.Text" xml:space="preserve">
     <value>Вставить</value>
   </data>
-  <data name="FontPanel.Text" xml:space="preserve">
-    <value>Шрифт</value>
+  <data name="Buffer.Text" xml:space="preserve">
+    <value>Буфер обмена</value>
   </data>
   <data name="FontComboBox.Text" xml:space="preserve">
     <value />
@@ -678,8 +654,8 @@
         wwAADsMBx2+oZAAAABNJREFUOE9jGAWjYBSMAjBgYAAABBAAAadEfGMAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="ribbonPanel2.Text" xml:space="preserve">
-    <value>Абзац</value>
+  <data name="FontPanel.Text" xml:space="preserve">
+    <value>Шрифт</value>
   </data>
   <data name="IndentLeft.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -744,6 +720,18 @@
         ADEKIDUa7YGYuoCYpIwLg/RSnpAoMIDhBwDnKnmwRv3gwgAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="ribbonCheckBox1.Text" xml:space="preserve">
+    <value>1.0</value>
+  </data>
+  <data name="ribbonCheckBox2.Text" xml:space="preserve">
+    <value>1.15</value>
+  </data>
+  <data name="ribbonCheckBox3.Text" xml:space="preserve">
+    <value>1.5</value>
+  </data>
+  <data name="ribbonCheckBox4.Text" xml:space="preserve">
+    <value>2.0</value>
+  </data>
   <data name="ribbonButton9.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -759,33 +747,6 @@
         T6RXIs0TlekXY1QWuKIZKqmDpZPauMPOs7cFMsXvWf/RDs+iyDDGBGenkBOswTpUEUlqsMUD1sC2NMIA
         Ryf18G1wsAVS6xItK9zQCpXUxcYppIHhZ1o/M1Q9Ua/yEcXSBVXf1EH5G9rni8/kl2JtAAAAAElFTkSu
         QmCC
-</value>
-  </data>
-  <data name="ribbonCheckBox1.Text" xml:space="preserve">
-    <value>1.0</value>
-  </data>
-  <data name="ribbonCheckBox2.Text" xml:space="preserve">
-    <value>1.15</value>
-  </data>
-  <data name="ribbonCheckBox3.Text" xml:space="preserve">
-    <value>1.5</value>
-  </data>
-  <data name="ribbonCheckBox4.Text" xml:space="preserve">
-    <value>2.0</value>
-  </data>
-  <data name="ribbonButton12.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAABpJREFUWEftwQEBAAAAgiD/r25IQAAAAMC5GhAgAAGdeElDAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="ribbonButton12.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
-        TUUH4QsZAicp0P615AAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAABoSURBVDhP
-        YxgU4AAUmwFxGhKfWMzwH4o9gLgDiU8sBmsCYTUghhlCCqYcSEAxGxDzIPGJxXC/kB0GMAbZBhhAMS8Q
-        SyLxicWUA1h0gKIxAIhnkIjhfiE7DGBJEpSUY4F4A4l4QAEDAwAhGWUkfWxufQAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="ribbonButton7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -822,6 +783,21 @@
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAABNJREFUOE9jGAWjYBSMAjBgYAAABBAAAadEfGMAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ribbonButton12.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABpJREFUWEftwQEBAAAAgiD/r25IQAAAAMC5GhAgAAGdeElDAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ribbonButton12.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
+        TUUH4QsZAicp0P615AAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAABoSURBVDhP
+        YxgU4AAUmwFxGhKfWMzwH4o9gLgDiU8sBmsCYTUghhlCCqYcSEAxGxDzIPGJxXC/kB0GMAbZBhhAMS8Q
+        SyLxicWUA1h0gKIxAIhnkIjhfiE7DGBJEpSUY4F4A4l4QAEDAwAhGWUkfWxufQAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="ribbonButton14.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -877,8 +853,35 @@
         LbF5sGhrf6IAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="ribbonPanel3.Text" xml:space="preserve">
-    <value>Вставка</value>
+  <data name="ribbonPanel2.Text" xml:space="preserve">
+    <value>Абзац</value>
+  </data>
+  <data name="PasteImage.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABpJREFUWEftwQEBAAAAgiD/r25IQAAAAMC5GhAgAAGdeElDAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="PasteImage.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        xAAADsQBlSsOGwAAAthJREFUOE+Vk+tL02EUx/1XelNUEETRuyKIqOhONaNYF7AIIXphhd1L8hbpLs02
+        Z5ttc7q5zSw2g+jC0vJ+S9u6LGeZaa0pRVpo9ek8v272sge+PIffec7nd855npPR3t5BXV0doVCIYDBI
+        IBCgtrYWv9+Pz+ejpqYGr9dLVVUVbrcbl8tFZWUlDoeDicnPZKjggttjnG1I/dGZiEjZsp8Mp8i7k6I+
+        lsLWmaLl9Ttept+h1kBykAz1Z51zGF0Qtom2h2DnNdjXIHs9mLqg9TMkJODxN3C8BvOLrxogFn9Chkr7
+        SP0wjpg4H0NeE5yLQlEz5D8AbxKqh2DwOzycgMAwhEen/gXYmofpnJQP8j0sB1wC88TB1gNXn0vgRwFM
+        Q98XaBfI1YEZANW0h0NviH6CFnG+EceoqE3s6Hu4KYqkISkZPBHIB/ENTs8AqI7nh+o44ffSNP6efnG0
+        iL9dFJNSJZaXom6pX5IiJqDYTIC6Ln1+Idk2M7nVFlxdrfRPTWlZvBVJAlpWKZH0T7NHxK+WBlB3vfV0
+        DquP6dFbD3K02kFRJMyIHFCQp3I2LqnHpX6pSgOmZwLUQ1m4Zz0LszezIGstK/J2kWnMYUd5Lnu9hRwI
+        mjga9nPuVi/F0fvcS4xrwWppAPXK5ugOM2vHSWbvPsP8A+dZlHuJJcfNLCsoZ6XByfJCI+vKLWx2V7D7
+        hofsiPcvQD3ReYcbmZfXwYKiThYb+1hmj7OuKsEmX5LM+lfoI0Nk3RqluC0tr3GMu0m5st8Aj8fD3GMP
+        mF3QzfyLvSyxxll+5Smr3c/YWP2CLb4EusAA+wVyKjrChea32LtUS38B1HCsutTNUkMHay73iLrZUN7L
+        FscjMiv70Yn0nn6y/HEOXX9GbkNC2/8AGhubcDqd2nRVVFRgt9ux2WxYrVbKysqwWCyYzWZMJhNGoxGD
+        wUBpaSklJSU/h0mNpDIU7X+VHhvnB1gFN4e3I6BjAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="PasteImage.Text" xml:space="preserve">
+    <value>Изображение</value>
   </data>
   <data name="ribbonButton16.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -929,33 +932,6 @@
   <data name="ribbonButton16.Text" xml:space="preserve">
     <value>Изображение</value>
   </data>
-  <data name="PasteImage.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAABpJREFUWEftwQEBAAAAgiD/r25IQAAAAMC5GhAgAAGdeElDAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="PasteImage.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        xAAADsQBlSsOGwAAAthJREFUOE+Vk+tL02EUx/1XelNUEETRuyKIqOhONaNYF7AIIXphhd1L8hbpLs02
-        Z5ttc7q5zSw2g+jC0vJ+S9u6LGeZaa0pRVpo9ek8v272sge+PIffec7nd855npPR3t5BXV0doVCIYDBI
-        IBCgtrYWv9+Pz+ejpqYGr9dLVVUVbrcbl8tFZWUlDoeDicnPZKjggttjnG1I/dGZiEjZsp8Mp8i7k6I+
-        lsLWmaLl9Ttept+h1kBykAz1Z51zGF0Qtom2h2DnNdjXIHs9mLqg9TMkJODxN3C8BvOLrxogFn9Chkr7
-        SP0wjpg4H0NeE5yLQlEz5D8AbxKqh2DwOzycgMAwhEen/gXYmofpnJQP8j0sB1wC88TB1gNXn0vgRwFM
-        Q98XaBfI1YEZANW0h0NviH6CFnG+EceoqE3s6Hu4KYqkISkZPBHIB/ENTs8AqI7nh+o44ffSNP6efnG0
-        iL9dFJNSJZaXom6pX5IiJqDYTIC6Ln1+Idk2M7nVFlxdrfRPTWlZvBVJAlpWKZH0T7NHxK+WBlB3vfV0
-        DquP6dFbD3K02kFRJMyIHFCQp3I2LqnHpX6pSgOmZwLUQ1m4Zz0LszezIGstK/J2kWnMYUd5Lnu9hRwI
-        mjga9nPuVi/F0fvcS4xrwWppAPXK5ugOM2vHSWbvPsP8A+dZlHuJJcfNLCsoZ6XByfJCI+vKLWx2V7D7
-        hofsiPcvQD3ReYcbmZfXwYKiThYb+1hmj7OuKsEmX5LM+lfoI0Nk3RqluC0tr3GMu0m5st8Aj8fD3GMP
-        mF3QzfyLvSyxxll+5Smr3c/YWP2CLb4EusAA+wVyKjrChea32LtUS38B1HCsutTNUkMHay73iLrZUN7L
-        FscjMiv70Yn0nn6y/HEOXX9GbkNC2/8AGhubcDqd2nRVVFRgt9ux2WxYrVbKysqwWCyYzWZMJhNGoxGD
-        wUBpaSklJSU/h0mNpDIU7X+VHhvnB1gFN4e3I6BjAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="PasteImage.Text" xml:space="preserve">
-    <value>Изображение</value>
-  </data>
   <data name="DatePaste.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
@@ -998,8 +974,8 @@
   <data name="DatePaste.Text" xml:space="preserve">
     <value>Дата и время </value>
   </data>
-  <data name="Pravka.Text" xml:space="preserve">
-    <value>Правка</value>
+  <data name="ribbonPanel3.Text" xml:space="preserve">
+    <value>Вставка</value>
   </data>
   <data name="Find.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1059,14 +1035,59 @@
   <data name="SelectedAll.Text" xml:space="preserve">
     <value>Выделить все</value>
   </data>
+  <data name="Pravka.Text" xml:space="preserve">
+    <value>Правка</value>
+  </data>
+  <data name="CloseTab.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABpJREFUWEftwQEBAAAAgiD/r25IQAAAAMC5GhAgAAGdeElDAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="CloseTab.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABNJREFUOE9jGAWjYBSMAjBgYAAABBAAAadEfGMAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="CloseTab.Text" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="TabsPanel.Text" xml:space="preserve">
+    <value>Вкладки</value>
+  </data>
+  <data name="MainTab.Text" xml:space="preserve">
+    <value>Главная</value>
+  </data>
+  <data name="ViewTab.Text" xml:space="preserve">
+    <value>Вид</value>
+  </data>
+  <data name="ribbon1.Text" xml:space="preserve">
+    <value>ribbon1</value>
+  </data>
+  <data name="&gt;&gt;ribbon1.Name" xml:space="preserve">
+    <value>ribbon1</value>
+  </data>
+  <data name="&gt;&gt;ribbon1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Ribbon, System.Windows.Forms.Ribbon35, Version=3.5.8.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ribbon1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ribbon1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="TabGroup.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="TabGroup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 131</value>
+    <value>-2, 131</value>
+  </data>
+  <data name="TabGroup.Padding" type="System.Drawing.Point, System.Drawing">
+    <value>12, 6</value>
   </data>
   <data name="TabGroup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>914, 473</value>
+    <value>920, 481</value>
   </data>
   <data name="TabGroup.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1081,7 +1102,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;TabGroup.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>-10, 126</value>
@@ -1102,7 +1123,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2634,6 +2655,18 @@
     <value>SelectedAll</value>
   </data>
   <data name="&gt;&gt;SelectedAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RibbonButton, System.Windows.Forms.Ribbon35, Version=3.5.8.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;TabsPanel.Name" xml:space="preserve">
+    <value>TabsPanel</value>
+  </data>
+  <data name="&gt;&gt;TabsPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RibbonPanel, System.Windows.Forms.Ribbon35, Version=3.5.8.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;CloseTab.Name" xml:space="preserve">
+    <value>CloseTab</value>
+  </data>
+  <data name="&gt;&gt;CloseTab.Type" xml:space="preserve">
     <value>System.Windows.Forms.RibbonButton, System.Windows.Forms.Ribbon35, Version=3.5.8.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ViewTab.Name" xml:space="preserve">

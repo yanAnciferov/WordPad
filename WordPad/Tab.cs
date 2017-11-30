@@ -45,6 +45,9 @@ namespace WordPad
 
         public TabPage Page { get { return _page; } }
         public RichTextBox TextBox { get { return _textBox; } }
+        public bool IsSave { get; set; }
+        public bool IsChanged { get; set; }
+        public string  Path { get; set; }
 
     }
 }

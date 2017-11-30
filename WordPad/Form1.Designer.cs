@@ -86,6 +86,8 @@
             this.Find = new System.Windows.Forms.RibbonButton();
             this.Replace = new System.Windows.Forms.RibbonButton();
             this.SelectedAll = new System.Windows.Forms.RibbonButton();
+            this.TabsPanel = new System.Windows.Forms.RibbonPanel();
+            this.CloseTab = new System.Windows.Forms.RibbonButton();
             this.ViewTab = new System.Windows.Forms.RibbonTab();
             this.TabGroup = new System.Windows.Forms.TabControl();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -223,6 +225,7 @@
             this.MainTab.Panels.Add(this.ribbonPanel2);
             this.MainTab.Panels.Add(this.ribbonPanel3);
             this.MainTab.Panels.Add(this.Pravka);
+            this.MainTab.Panels.Add(this.TabsPanel);
             resources.ApplyResources(this.MainTab, "MainTab");
             // 
             // Buffer
@@ -561,6 +564,17 @@
             resources.ApplyResources(this.SelectedAll, "SelectedAll");
             this.SelectedAll.Click += new System.EventHandler(this.SelectAll_Click);
             // 
+            // TabsPanel
+            // 
+            this.TabsPanel.Items.Add(this.CloseTab);
+            resources.ApplyResources(this.TabsPanel, "TabsPanel");
+            // 
+            // CloseTab
+            // 
+            this.CloseTab.Image = ((System.Drawing.Image)(resources.GetObject("CloseTab.Image")));
+            this.CloseTab.SmallImage = ((System.Drawing.Image)(resources.GetObject("CloseTab.SmallImage")));
+            resources.ApplyResources(this.CloseTab, "CloseTab");
+            // 
             // ViewTab
             // 
             resources.ApplyResources(this.ViewTab, "ViewTab");
@@ -662,6 +676,8 @@
         private System.Windows.Forms.RibbonButton Past;
         private System.Windows.Forms.TabControl TabGroup;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RibbonPanel TabsPanel;
+        private System.Windows.Forms.RibbonButton CloseTab;
     }
 }
 

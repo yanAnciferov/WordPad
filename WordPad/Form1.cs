@@ -80,6 +80,14 @@ namespace WordPad
             rich.SelectionChanged += MainTextBox_SelectionChanged;
             rich.TextChanged += MainTextBox_TextChanged;
             Tab newTab = new Tab(new TabPage(), rich, tabName);
+            newTab.IsChanged = false;
+            newTab.IsSave = false;
+            CreateTab(newTab);
+        }
+
+        private void CreateTab(Tab newTab)
+        {
+          
             TabGroup.TabPages.Add(newTab.Page);
             tabs.Add(newTab);
 
@@ -90,6 +98,9 @@ namespace WordPad
         private void onSelectTab(Tab selectTab)
         {
             FontCombo = selectTab.TextBox;
+            isChanged = selectTab.IsChanged;
+            isSave = selectTab.IsSave;
+            path = selectTab.Path;
             FontCombo.Focus();
             MainTextBox_SelectionChanged(null,null);
             MainTextBox_TextChanged(null,null);
