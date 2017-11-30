@@ -87,9 +87,8 @@
             this.Replace = new System.Windows.Forms.RibbonButton();
             this.SelectedAll = new System.Windows.Forms.RibbonButton();
             this.ViewTab = new System.Windows.Forms.RibbonTab();
-            this.WorkPanel = new System.Windows.Forms.Panel();
-            this.FontCombo = new System.Windows.Forms.RichTextBox();
-            this.WorkPanel.SuspendLayout();
+            this.TabGroup = new System.Windows.Forms.TabControl();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // ribbonTab1
@@ -566,35 +565,30 @@
             // 
             resources.ApplyResources(this.ViewTab, "ViewTab");
             // 
-            // WorkPanel
+            // TabGroup
             // 
-            resources.ApplyResources(this.WorkPanel, "WorkPanel");
-            this.WorkPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.WorkPanel.Controls.Add(this.FontCombo);
-            this.WorkPanel.Name = "WorkPanel";
+            resources.ApplyResources(this.TabGroup, "TabGroup");
+            this.TabGroup.Name = "TabGroup";
+            this.TabGroup.SelectedIndex = 0;
+            this.TabGroup.SelectedIndexChanged += new System.EventHandler(this.TabGroup_SelectedIndexChanged);
             // 
-            // FontCombo
+            // panel1
             // 
-            resources.ApplyResources(this.FontCombo, "FontCombo");
-            this.FontCombo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.FontCombo.EnableAutoDragDrop = true;
-            this.FontCombo.HideSelection = false;
-            this.FontCombo.Name = "FontCombo";
-            this.FontCombo.SelectionChanged += new System.EventHandler(this.MainTextBox_SelectionChanged);
-            this.FontCombo.Click += new System.EventHandler(this.FontCombo_Click);
-            this.FontCombo.TextChanged += new System.EventHandler(this.MainTextBox_TextChanged);
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
             // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Controls.Add(this.ribbon1);
-            this.Controls.Add(this.WorkPanel);
+            this.Controls.Add(this.TabGroup);
+            this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.IsMdiContainer = true;
             this.Name = "Form1";
-            this.Resize += new System.EventHandler(this.Form1_Resize);
-            this.WorkPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -622,8 +616,6 @@
         private System.Windows.Forms.RibbonButton ItalicText;
         private System.Windows.Forms.RibbonButton UnderlineText;
         private System.Windows.Forms.RibbonButton StrikeOut;
-        private System.Windows.Forms.Panel WorkPanel;
-        private System.Windows.Forms.RichTextBox FontCombo;
         private System.Windows.Forms.RibbonButton alignLeft;
         private System.Windows.Forms.RibbonButton ribbonButton9;
         private System.Windows.Forms.RibbonButton IndentLeft;
@@ -668,6 +660,8 @@
         private System.Windows.Forms.RibbonButton Cop;
         private System.Windows.Forms.RibbonButton Cu;
         private System.Windows.Forms.RibbonButton Past;
+        private System.Windows.Forms.TabControl TabGroup;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

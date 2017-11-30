@@ -87,9 +87,10 @@ namespace WordPad
             {
                 Pravka.Enabled = false;
             }
-            else
+            else 
             {
-                Pravka.Enabled = true;
+                if (Pravka.Enabled != true)
+                    Pravka.Enabled = true;
             }
         }
 

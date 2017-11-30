@@ -11,6 +11,8 @@ using System.Windows.Forms;
 
 namespace WordPad
 {
+
+   
     public partial class Form1 : Form
     {
 
@@ -21,11 +23,14 @@ namespace WordPad
         bool isSave = false;
         bool isChanged = false;
         string path;
-        
+
+        RichTextBox FontCombo;
+        List<Tab> tabs = new List<Tab>();
 
         public Form1()
         {
             InitializeComponent();
+            FontCombo = new RichTextBox();
             CheckStateMainTextBox();
             MainTextBox_SelectionChanged(null, null);
             FontCombo.Text = "Отображаемые диалоговые окна и команды меню могут отличаться от описанных в справке в зависимости от текущих настроек или редации Visual Studio. Чтобы изменить параметры, в меню Сервис выберите команду Импорт и экспорт параметров. Дополнительные сведения см. в разделе Customizing Development Settings in Visual Studio.";
@@ -44,7 +49,7 @@ namespace WordPad
                 FontSizeCombo.DropDownItems.Add(ribbonItem);
             }
 
-            Form1_Resize(null, null);
+            //Form1_Resize(null, null);
             FontCombo.Font = null;
             currentAlignCheked = alignLeft;
             currentAlignCheked.Checked = true;
@@ -62,8 +67,33 @@ namespace WordPad
                 ribbonItem.Click += FontItem_Click;
                 FontComboBox.DropDownItems.Add(ribbonItem);
             }
+
+            CreateTab("Новая вкладка");
+            //CreateTab("Новая вкладка2");
         }
 
+
+        private void CreateTab(string tabName)
+        {
+            RichTextBox rich = new RichTextBox();
+            rich.Click += FontCombo_Click;
+            rich.SelectionChanged += MainTextBox_SelectionChanged;
+            rich.TextChanged += MainTextBox_TextChanged;
+            Tab newTab = new Tab(new TabPage(), rich, tabName);
+            TabGroup.TabPages.Add(newTab.Page);
+            tabs.Add(newTab);
+
+            TabGroup.SelectedIndex = tabs.Count - 1;
+            TabGroup_SelectedIndexChanged(null, null);
+        }
+
+        private void onSelectTab(Tab selectTab)
+        {
+            FontCombo = selectTab.TextBox;
+            FontCombo.Focus();
+            MainTextBox_SelectionChanged(null,null);
+            MainTextBox_TextChanged(null,null);
+        }
 
 
         public void FontOptionChanged()
@@ -78,8 +108,6 @@ namespace WordPad
                 FontCombo.SelectionFont = new Font(ff, size, GetStyleText());
 
             }
-
-
 
         }
 
@@ -125,8 +153,10 @@ namespace WordPad
             }
             else
             {
-                Cop.Enabled = true;
-                Cu.Enabled = true;
+                if(Cop.Enabled != true)
+                    Cop.Enabled = true;
+                if(Cu.Enabled != true)
+                    Cu.Enabled = true;
             }
 
 
@@ -146,10 +176,14 @@ namespace WordPad
                     FontSizeCombo.TextBoxText = "";
                 }
 
-                ItalicText.Checked = FontCombo.SelectionFont.Italic;
-                Bold.Checked = FontCombo.SelectionFont.Bold;
-                UnderlineText.Checked = FontCombo.SelectionFont.Underline;
-                StrikeOut.Checked = FontCombo.SelectionFont.Strikeout;
+                if(ItalicText.Checked != FontCombo.SelectionFont.Italic)
+                    ItalicText.Checked = FontCombo.SelectionFont.Italic;
+                if (Bold.Checked != FontCombo.SelectionFont.Bold)
+                    Bold.Checked = FontCombo.SelectionFont.Bold;
+                if (UnderlineText.Checked != FontCombo.SelectionFont.Underline)
+                    UnderlineText.Checked = FontCombo.SelectionFont.Underline;
+                if (StrikeOut.Checked != FontCombo.SelectionFont.Strikeout)
+                    StrikeOut.Checked = FontCombo.SelectionFont.Strikeout;
                 
             }
             else
@@ -199,40 +233,43 @@ namespace WordPad
                 }
             }
 
-
-            ItalicText.Checked = isItalic;
-            Bold.Checked = isBold;
-            UnderlineText.Checked = isUnderline;
-            StrikeOut.Checked = isStrike;
+            if(isItalic != ItalicText.Checked)
+                ItalicText.Checked = isItalic;
+            if (isBold != Bold.Checked)
+                Bold.Checked = isBold;
+            if (isUnderline != UnderlineText.Checked)
+                UnderlineText.Checked = isUnderline;
+            if (isStrike != StrikeOut.Checked)
+                StrikeOut.Checked = isStrike;
         }
 
-        private void Form1_Resize(object sender, EventArgs e)
-        {
-            int margin = ((Width - FontCombo.Width) / 2) - 10;
-            if (margin < 0)
-            {
-                FontCombo.Width = Width - 16;
-                FontCombo.Location = new Point(0, 0);
-            }
-            else
-            {
-                FontCombo.Width = 820;
-                FontCombo.Location = new Point(margin, 0);
-            }
-            FontCombo.Height = WorkPanel.Height;
+        //private void Form1_Resize(object sender, EventArgs e)
+        //{
+        //    int margin = ((Width - FontCombo.Width) / 2) - 10;
+        //    if (margin < 0)
+        //    {
+        //        FontCombo.Width = Width - 16;
+        //        FontCombo.Location = new Point(0, 0);
+        //    }
+        //    else
+        //    {
+        //        FontCombo.Width = 820;
+        //        FontCombo.Location = new Point(margin, 0);
+        //    }
+        //    FontCombo.Height = WorkPanel.Height;
 
-            if (Width < 500)
-            {
-                WorkPanel.Height = Height;
-                ribbon1.Visible = false;
-                FontCombo.Height = WorkPanel.Height;
-            }
-            else
-            {
-                ribbon1.Visible = true;
-                WorkPanel.Height = Height - ribbon1.Height;
-            }
-        }
+        //    if (Width < 500)
+        //    {
+        //        WorkPanel.Height = Height;
+        //        ribbon1.Visible = false;
+        //        FontCombo.Height = WorkPanel.Height;
+        //    }
+        //    else
+        //    {
+        //        ribbon1.Visible = true;
+        //        WorkPanel.Height = Height - ribbon1.Height;
+        //    }
+        //}
 
         private void FontSizeComboButton_click(object sender, EventArgs e)
         {
@@ -278,20 +315,29 @@ namespace WordPad
        
         private void FontCombo_Click(object sender, EventArgs e)
         {
-            currentAlignCheked.Checked = false;
+            //currentAlignCheked.Checked = false;
             switch (FontCombo.SelectionAlignment)
             {
                 case HorizontalAlignment.Left:
-                    alignLeft.Checked = true;
-                    currentAlignCheked = alignLeft;
+                    if (alignLeft.Checked != true && alignLeft != currentAlignCheked)
+                    {
+                        alignLeft.Checked = true;
+                        currentAlignCheked = alignLeft;
+                    }
                     break;
                 case HorizontalAlignment.Right:
-                    alignRigth.Checked = true;
-                    currentAlignCheked = alignRigth;
+                    if (alignRigth.Checked != true && alignRigth != currentAlignCheked)
+                    {
+                        alignRigth.Checked = true;
+                        currentAlignCheked = alignRigth;
+                    }
                     break;
                 case HorizontalAlignment.Center:
-                    alignCenter.Checked = true;
-                    currentAlignCheked = alignCenter;
+                    if (alignCenter.Checked != true && alignCenter != currentAlignCheked)
+                    {
+                        alignCenter.Checked = true;
+                        currentAlignCheked = alignCenter;
+                    }
                     break;
                 default:
                     break;
@@ -660,6 +706,11 @@ namespace WordPad
         private void IndentLeft_Click(object sender, EventArgs e)
         {
             FontCombo.SelectionIndent -= 50;
+        }
+
+        private void TabGroup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            onSelectTab(tabs[TabGroup.SelectedIndex]);
         }
     }
 }
