@@ -297,6 +297,7 @@ namespace WordPad
                     path = save.FileName;
                     tabs[TabGroup.SelectedIndex].IsSave = true;
                     tabs[TabGroup.SelectedIndex].Path = path;
+                    tabs[TabGroup.SelectedIndex].Page.Text = new FileInfo(save.FileName).Name.Split('.')[0];
                 }
             }
             else
@@ -312,45 +313,55 @@ namespace WordPad
             }
         }
 
+
+        bool chekIsOpen(string newPath)
+        {
+
+            foreach (var item in tabs)
+            {
+                if (newPath == item.Path)
+                    return true;
+            }
+            return false;
+        }
+
         private void OpenFileButton_Click(object sender, EventArgs e)
         {
 
 
             OpenFileDialog open = new OpenFileDialog();
             open.Filter = "txt files (*.txt)|*.txt|rtf files (*.rtf)|*.rtf";
+            open.Multiselect = true;
             if (open.ShowDialog() == DialogResult.OK)
             {
-                if (open.FileName == path)
-                    return;
-
-                if (FontCombo.CanUndo)
-                {
-                    if (!SaveFile())
-                    {
-                        return;
-                    }
-                }
-
                 try
                 {
-                    FileInfo file = new FileInfo(open.FileName);
-                    RichTextBox rich = new RichTextBox();
-                    if (open.FilterIndex == 1)
+                    foreach (var item in open.FileNames)
                     {
-                        rich.Text = File.ReadAllText(open.FileName, Encoding.Default);
+
+                        if (chekIsOpen(item))
+                            break;
+
+                        FileInfo file = new FileInfo(item);
+                        RichTextBox rich = new RichTextBox();
+                        if (open.FilterIndex == 1)
+                        {
+                            rich.Text = File.ReadAllText(item, Encoding.Default);
+                        }
+                        if (open.FilterIndex == 2)
+                            rich.Rtf = File.ReadAllText(item, Encoding.Default);
+
+
+
+                        Tab newTab = new Tab(new TabPage(), rich, new FileInfo(item).Name.Split('.')[0]);
+                        newTab.Path = item;
+                        newTab.IsChanged = false;
+                        newTab.IsSave = true;
+                        newTab.TextBox.EnableAutoDragDrop = true;
+                        CreateTab(newTab);
+
+                       // Text = file.Name.Split('.')[0] + " - WordPad";
                     }
-                    if (open.FilterIndex == 2)
-                        rich.Rtf = File.ReadAllText(open.FileName, Encoding.Default);
-
-                    Tab newTab = new Tab(new TabPage(), rich, new FileInfo(open.FileName).Name.Split('.')[0]);
-                    newTab.Path = open.FileName;
-                    newTab.IsChanged = false;
-                    newTab.IsSave = true;
-
-                    CreateTab(newTab);
-
-                    Text = file.Name.Split('.')[0] + " - WordPad";
-
                 }
                 catch (Exception ex)
                 {

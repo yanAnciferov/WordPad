@@ -740,13 +740,8 @@
   </data>
   <data name="ribbonButton9.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
-        TUUH4QsZAjAt0hD1awAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACpSURBVDhP
-        pdMxCgIxEIXh5x2sFAvB3lZQsRVsPIKljWDpIew9gifwDpYewVKERRthsdF/4rqFrDCbPPhIJsWQhEQk
-        T6RXIs0TlekXY1QWuKIZKqmDpZPauMPOs7cFMsXvWf/RDs+iyDDGBGenkBOswTpUEUlqsMUD1sC2NMIA
-        Ryf18G1wsAVS6xItK9zQCpXUxcYppIHhZ1o/M1Q9Ua/yEcXSBVXf1EH5G9rni8/kl2JtAAAAAElFTkSu
-        QmCC
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABNJREFUOE9jGAWjYBSMAjBgYAAABBAAAadEfGMAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="ribbonButton7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -793,11 +788,8 @@
   </data>
   <data name="ribbonButton12.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
-        TUUH4QsZAicp0P615AAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAABoSURBVDhP
-        YxgU4AAUmwFxGhKfWMzwH4o9gLgDiU8sBmsCYTUghhlCCqYcSEAxGxDzIPGJxXC/kB0GMAbZBhhAMS8Q
-        SyLxicWUA1h0gKIxAIhnkIjhfiE7DGBJEpSUY4F4A4l4QAEDAwAhGWUkfWxufQAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABNJREFUOE9jGAWjYBSMAjBgYAAABBAAAadEfGMAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="ribbonButton14.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -1058,9 +1050,6 @@
   </data>
   <data name="MainTab.Text" xml:space="preserve">
     <value>Главная</value>
-  </data>
-  <data name="ViewTab.Text" xml:space="preserve">
-    <value>Вид</value>
   </data>
   <data name="ribbon1.Text" xml:space="preserve">
     <value>ribbon1</value>
@@ -2668,12 +2657,6 @@
   </data>
   <data name="&gt;&gt;CloseTab.Type" xml:space="preserve">
     <value>System.Windows.Forms.RibbonButton, System.Windows.Forms.Ribbon35, Version=3.5.8.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;ViewTab.Name" xml:space="preserve">
-    <value>ViewTab</value>
-  </data>
-  <data name="&gt;&gt;ViewTab.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RibbonTab, System.Windows.Forms.Ribbon35, Version=3.5.8.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Form1</value>

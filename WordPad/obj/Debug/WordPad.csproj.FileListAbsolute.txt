@@ -57,3 +57,4 @@ C:\Users\Yan\Desktop\Новая папка\Новая папка\WordPad\WordPad
 C:\Users\Yan\Desktop\Новая папка\Новая папка\WordPad\WordPad\obj\Debug\WordPad.pdb
 C:\Users\Yan\Desktop\Новая папка\Новая папка\WordPad\WordPad\obj\Debug\WordPad.Form1.resources
 C:\Users\Yan\Desktop\Новая папка\Новая папка\WordPad\WordPad\obj\Debug\WordPad.Form1.ru.resources
+C:\Users\anci_oq88\Desktop\WordPad\WordPad\obj\Debug\WordPad.DateFomats.resources

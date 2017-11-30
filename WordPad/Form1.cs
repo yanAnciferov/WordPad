@@ -70,6 +70,12 @@ namespace WordPad
 
             CreateTab("Новая вкладка");
             //CreateTab("Новая вкладка2");
+            ribbonButton13.Enabled = false;
+            ribbonButton8.Enabled = false;
+            ribbonButton9.Enabled = false;
+            ribbonButton12.Enabled = false;
+            ribbonButton14.Enabled = false;
+            alignJustify.Enabled = false;
         }
 
 
@@ -79,15 +85,28 @@ namespace WordPad
             rich.Click += FontCombo_Click;
             rich.SelectionChanged += MainTextBox_SelectionChanged;
             rich.TextChanged += MainTextBox_TextChanged;
+            rich.EnableAutoDragDrop = true;
             Tab newTab = new Tab(new TabPage(), rich, tabName);
             newTab.IsChanged = false;
             newTab.IsSave = false;
+            newTab.Path = tabName;
             CreateTab(newTab);
         }
 
         private void CreateTab(Tab newTab)
         {
-          
+
+            if (TabGroup.TabPages.Count == 0)
+            {
+                CloseTab.Enabled = true;
+                foreach (var item in MainTab.Panels)
+                {
+                    item.Enabled = true;
+                }
+                Save.Enabled = true;
+                SaveAs.Enabled = true;
+            }
+
             TabGroup.TabPages.Add(newTab.Page);
             tabs.Add(newTab);
 
@@ -104,6 +123,9 @@ namespace WordPad
             FontCombo.Focus();
             MainTextBox_SelectionChanged(null,null);
             MainTextBox_TextChanged(null,null);
+
+           
+
         }
 
 
@@ -721,7 +743,87 @@ namespace WordPad
 
         private void TabGroup_SelectedIndexChanged(object sender, EventArgs e)
         {
-            onSelectTab(tabs[TabGroup.SelectedIndex]);
+            if (TabGroup.SelectedIndex != -1)
+                onSelectTab(tabs[TabGroup.SelectedIndex]);
+        }
+
+        private void CloseTab_Click(object sender, EventArgs e)
+        {
+            var tab = TabGroup.SelectedTab;
+            Tab deletedTab = null;
+            foreach (var item in tabs)
+            {
+                if (item.Page == tab)
+                    deletedTab = item;
+            }
+
+            if (deletedTab != null)
+            {
+                if (deletedTab.TextBox.CanUndo == false || SaveFile() != false)
+                {
+                     TabGroup.TabPages.Remove(TabGroup.SelectedTab);
+                     tabs.Remove(deletedTab);
+                     if (tabs.Count == 0)
+                     {
+                         CloseTab.Enabled = false;
+                         foreach (var item in MainTab.Panels)
+                         {
+                             item.Enabled = false;
+                         }
+                         Save.Enabled = false;
+                         SaveAs.Enabled = false;
+                     }
+                }               
+            }
+        }
+
+        private void CreateTa_Click(object sender, EventArgs e)
+        {
+            CreateFileButton_Click(null, null);
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            while (TabGroup.TabPages.Count != 0)
+            {
+                var tab = TabGroup.SelectedTab;
+                Tab deletedTab = null;
+                foreach (var item in tabs)
+                {
+                    if (item.Page == tab)
+                        deletedTab = item;
+                }
+
+                if (deletedTab != null)
+                {
+                    path = deletedTab.Path;
+                    if (path == "")
+                        path = deletedTab.Page.Text;
+                    bool result;
+                        
+
+                    if (deletedTab.TextBox.CanUndo == false || (result = SaveFile()) != false)
+                    {
+                        TabGroup.TabPages.Remove(TabGroup.SelectedTab);
+                        tabs.Remove(deletedTab);
+                        
+                    }
+                    else if (result == false) { 
+                        e.Cancel = true; 
+                        TabGroup_SelectedIndexChanged(null, null); 
+                        return;
+                    }
+                }
+            }
+               
+        }
+
+        
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

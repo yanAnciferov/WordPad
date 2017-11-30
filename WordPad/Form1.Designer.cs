@@ -88,7 +88,6 @@
             this.SelectedAll = new System.Windows.Forms.RibbonButton();
             this.TabsPanel = new System.Windows.Forms.RibbonPanel();
             this.CloseTab = new System.Windows.Forms.RibbonButton();
-            this.ViewTab = new System.Windows.Forms.RibbonTab();
             this.TabGroup = new System.Windows.Forms.TabControl();
             this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
@@ -156,7 +155,6 @@
             this.ribbon1.OrbText = "Файл";
             this.ribbon1.RibbonTabFont = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ribbon1.Tabs.Add(this.MainTab);
-            this.ribbon1.Tabs.Add(this.ViewTab);
             this.ribbon1.TabsMargin = new System.Windows.Forms.Padding(0, 2, 20, 0);
             this.ribbon1.TabSpacing = 1;
             this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Black;
@@ -217,6 +215,7 @@
             this.Exit.Image = ((System.Drawing.Image)(resources.GetObject("Exit.Image")));
             this.Exit.SmallImage = ((System.Drawing.Image)(resources.GetObject("Exit.SmallImage")));
             resources.ApplyResources(this.Exit, "Exit");
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // MainTab
             // 
@@ -421,6 +420,7 @@
             this.ribbonButton9.DropDownItems.Add(this.ribbonCheckBox2);
             this.ribbonButton9.DropDownItems.Add(this.ribbonCheckBox3);
             this.ribbonButton9.DropDownItems.Add(this.ribbonCheckBox4);
+            this.ribbonButton9.Enabled = false;
             this.ribbonButton9.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton9.Image")));
             this.ribbonButton9.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
             this.ribbonButton9.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton9.SmallImage")));
@@ -450,6 +450,7 @@
             this.ribbonButton12.DropDownItems.Add(this.ribbonButton7);
             this.ribbonButton12.DropDownItems.Add(this.ribbonButton10);
             this.ribbonButton12.DropDownItems.Add(this.ribbonButton11);
+            this.ribbonButton12.Enabled = false;
             this.ribbonButton12.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton12.Image")));
             this.ribbonButton12.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
             this.ribbonButton12.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Compact;
@@ -572,12 +573,10 @@
             // CloseTab
             // 
             this.CloseTab.Image = ((System.Drawing.Image)(resources.GetObject("CloseTab.Image")));
+            this.CloseTab.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Large;
             this.CloseTab.SmallImage = ((System.Drawing.Image)(resources.GetObject("CloseTab.SmallImage")));
             resources.ApplyResources(this.CloseTab, "CloseTab");
-            // 
-            // ViewTab
-            // 
-            resources.ApplyResources(this.ViewTab, "ViewTab");
+            this.CloseTab.Click += new System.EventHandler(this.CloseTab_Click);
             // 
             // TabGroup
             // 
@@ -603,6 +602,7 @@
             this.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.IsMdiContainer = true;
             this.Name = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.ResumeLayout(false);
 
         }
@@ -615,7 +615,6 @@
         private System.Windows.Forms.RibbonButton ribbonButton1;
         private System.Windows.Forms.RibbonButton ribbonButton2;
         private System.Windows.Forms.RibbonTab MainTab;
-        private System.Windows.Forms.RibbonTab ViewTab;
         private System.Windows.Forms.Ribbon ribbon1;
         private System.Windows.Forms.RibbonOrbMenuItem CreateFileButton;
         private System.Windows.Forms.RibbonOrbMenuItem OpenFileButton;
