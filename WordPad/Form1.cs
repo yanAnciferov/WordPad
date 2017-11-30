@@ -61,7 +61,6 @@ namespace WordPad
             System.Drawing.Text.InstalledFontCollection fonts = new System.Drawing.Text.InstalledFontCollection();
             foreach (FontFamily font in fonts.Families)
             {
-                
                 RibbonButton ribbonItem = new RibbonButton();
                 ribbonItem.Text = font.Name;
                 ribbonItem.Click += FontItem_Click;
@@ -86,6 +85,7 @@ namespace WordPad
             rich.SelectionChanged += MainTextBox_SelectionChanged;
             rich.TextChanged += MainTextBox_TextChanged;
             rich.EnableAutoDragDrop = true;
+            rich.HideSelection = false;
             Tab newTab = new Tab(new TabPage(), rich, tabName);
             newTab.IsChanged = false;
             newTab.IsSave = false;
@@ -123,9 +123,6 @@ namespace WordPad
             FontCombo.Focus();
             MainTextBox_SelectionChanged(null,null);
             MainTextBox_TextChanged(null,null);
-
-           
-
         }
 
 
@@ -162,11 +159,6 @@ namespace WordPad
                 tmpRB.SelectAll();
                 FontCombo.SelectionChanged -= this.MainTextBox_SelectionChanged;
                 FontCombo.SelectedRtf = tmpRB.SelectedRtf;
-
-
-
-               
-
             }
 
             FontCombo.SelectionStart = start;
@@ -275,34 +267,6 @@ namespace WordPad
             if (isStrike != StrikeOut.Checked)
                 StrikeOut.Checked = isStrike;
         }
-
-        //private void Form1_Resize(object sender, EventArgs e)
-        //{
-        //    int margin = ((Width - FontCombo.Width) / 2) - 10;
-        //    if (margin < 0)
-        //    {
-        //        FontCombo.Width = Width - 16;
-        //        FontCombo.Location = new Point(0, 0);
-        //    }
-        //    else
-        //    {
-        //        FontCombo.Width = 820;
-        //        FontCombo.Location = new Point(margin, 0);
-        //    }
-        //    FontCombo.Height = WorkPanel.Height;
-
-        //    if (Width < 500)
-        //    {
-        //        WorkPanel.Height = Height;
-        //        ribbon1.Visible = false;
-        //        FontCombo.Height = WorkPanel.Height;
-        //    }
-        //    else
-        //    {
-        //        ribbon1.Visible = true;
-        //        WorkPanel.Height = Height - ribbon1.Height;
-        //    }
-        //}
 
         private void FontSizeComboButton_click(object sender, EventArgs e)
         {
@@ -645,6 +609,7 @@ namespace WordPad
                 if (f > 1630)
                     FontSizeCombo.TextBoxText = "1630";
                 FontOptionChanged();
+                fontReSize(f);
             }else
             {
                 FontSizeCombo.TextBoxText = FontCombo.Font.Size.ToString();
@@ -657,6 +622,27 @@ namespace WordPad
             {
                 if(item.Text == FontComboBox.TextBoxText)
                 {
+                    int start = FontCombo.SelectionStart;
+                    int length = FontCombo.SelectionLength;
+                    using (RichTextBox tmpRB = new RichTextBox())
+                    {
+                        tmpRB.SelectAll();
+                        tmpRB.SelectedRtf = FontCombo.SelectedRtf;
+                        for (int i = 0; i < tmpRB.TextLength; ++i)
+                        {
+                            tmpRB.Select(i, 1);
+                            tmpRB.SelectionFont = new Font(item.Text, tmpRB.SelectionFont.Size, tmpRB.SelectionFont.Style);
+                        }
+                        tmpRB.SelectAll();
+                        FontCombo.SelectionChanged -= this.MainTextBox_SelectionChanged;
+                        FontCombo.SelectedRtf = tmpRB.SelectedRtf;
+                    }
+
+                    FontCombo.SelectionStart = start;
+                    FontCombo.SelectionLength = length;
+                    FontCombo.SelectionChanged += this.MainTextBox_SelectionChanged;
+                    FontComboBox.TextBoxText = item.Text;
+
                     FontOptionChanged();
                     return;
                 }

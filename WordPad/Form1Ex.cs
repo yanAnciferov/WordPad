@@ -19,8 +19,6 @@ namespace WordPad
             {
                 Save.PerformClick();
             }
-
-          
         }
 
         private void SelectAll_Click(object sender, EventArgs e)
@@ -351,7 +349,7 @@ namespace WordPad
                         if (open.FilterIndex == 2)
                             rich.Rtf = File.ReadAllText(item, Encoding.Default);
 
-
+                        rich.HideSelection = false;
 
                         Tab newTab = new Tab(new TabPage(), rich, new FileInfo(item).Name.Split('.')[0]);
                         newTab.Path = item;

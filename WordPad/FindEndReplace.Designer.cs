@@ -38,8 +38,8 @@
             this.Cancel = new System.Windows.Forms.Button();
             this.ButtonPanel = new System.Windows.Forms.Panel();
             this.ReplaceAll = new System.Windows.Forms.Button();
-            this.Replace = new System.Windows.Forms.Button();
             this.FindNext = new System.Windows.Forms.Button();
+            this.Replace = new System.Windows.Forms.Button();
             this.ButtonPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -133,15 +133,7 @@
             this.ReplaceAll.TabIndex = 20;
             this.ReplaceAll.Text = "Заменить все";
             this.ReplaceAll.UseVisualStyleBackColor = true;
-            // 
-            // Replace
-            // 
-            this.Replace.Location = new System.Drawing.Point(15, 37);
-            this.Replace.Name = "Replace";
-            this.Replace.Size = new System.Drawing.Size(95, 23);
-            this.Replace.TabIndex = 19;
-            this.Replace.Text = "Заменить";
-            this.Replace.UseVisualStyleBackColor = true;
+            this.ReplaceAll.Click += new System.EventHandler(this.ReplaceAll_Click);
             // 
             // FindNext
             // 
@@ -151,6 +143,17 @@
             this.FindNext.TabIndex = 18;
             this.FindNext.Text = "Найти далее";
             this.FindNext.UseVisualStyleBackColor = true;
+            this.FindNext.Click += new System.EventHandler(this.FindNext_Click);
+            // 
+            // Replace
+            // 
+            this.Replace.Location = new System.Drawing.Point(15, 37);
+            this.Replace.Name = "Replace";
+            this.Replace.Size = new System.Drawing.Size(95, 23);
+            this.Replace.TabIndex = 19;
+            this.Replace.Text = "Заменить";
+            this.Replace.UseVisualStyleBackColor = true;
+            this.Replace.Click += new System.EventHandler(this.Replace_Click);
             // 
             // FindEndReplace
             // 
